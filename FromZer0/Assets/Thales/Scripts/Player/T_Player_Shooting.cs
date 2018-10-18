@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Shooting : MonoBehaviour {
+public class T_Player_Shooting : MonoBehaviour {
 
     [SerializeField] float projectileSpeed = 50f;
     [SerializeField] float rateOfFire = 0.5f;

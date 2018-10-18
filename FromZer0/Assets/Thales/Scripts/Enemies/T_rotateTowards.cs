@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotateTowards : MonoBehaviour {
+public class T_rotateTowards : MonoBehaviour {
 
     // Angular speed in radians per sec.
     [SerializeField] float speed = 2f;

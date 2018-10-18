@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerOG : MonoBehaviour {
+public class T_PlayerOG : MonoBehaviour {
 
     //config parameters
     [SerializeField] float moveSpeed = 10f;

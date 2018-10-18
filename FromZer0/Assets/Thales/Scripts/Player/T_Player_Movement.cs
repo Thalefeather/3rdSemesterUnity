@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movement : MonoBehaviour {
+public class T_Player_Movement : MonoBehaviour {
 
     [SerializeField] float moveSpeed = 25f;
     [SerializeField] float skillWalking = 0;

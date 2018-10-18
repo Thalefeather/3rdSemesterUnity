@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shootPlayer : MonoBehaviour {
+public class T_shootPlayer : MonoBehaviour {
 
     [SerializeField] float projectileSpeed = 20f;
 
