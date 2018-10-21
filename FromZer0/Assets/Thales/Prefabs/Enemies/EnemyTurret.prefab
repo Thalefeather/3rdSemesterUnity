@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
+  XpWorth: 10
+  CurrencyWorth: 75
 --- !u!114 &114856556898641568
 MonoBehaviour:
   m_ObjectHideFlags: 1

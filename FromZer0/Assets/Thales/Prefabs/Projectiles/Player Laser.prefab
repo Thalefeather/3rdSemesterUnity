@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 50
   timeToFade: 0.5
-  damage: 10
+  damage: 5
   Player: {fileID: 1230553466032196, guid: 8940a611c04d3454a88528bfb58620db, type: 2}
 --- !u!212 &212974784152806698
 SpriteRenderer:

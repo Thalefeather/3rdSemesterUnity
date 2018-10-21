@@ -77,6 +77,7 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
             Debug.Log("collided with *BODY*");
             dealDamage(collision.transform.parent.gameObject);
             TallyXpRanged();
+            //hitStop(collision);
 
             Destroy(this.gameObject);
 
@@ -91,6 +92,18 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
         var array = PC.GetComponent<T_SkillTracker>().Ranged;
         PC.GetComponent<T_SkillTracker>().EarnXp(array, 10);
     }
+
+    private void hitStop(Collider2D enemy)
+    {
+
+        //makes enemy invisible but can still do stuff
+        enemy.transform.parent.GetComponent<Renderer>().enabled = false;
+
+
+
+    }
+
+    
 
 
 }

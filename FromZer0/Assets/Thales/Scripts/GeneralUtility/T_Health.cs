@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class T_Health : MonoBehaviour {
 
-    [SerializeField] float maxHealth = 10f;
-    [SerializeField] float currentHealth = 10f;
+    [SerializeField] public float maxHealth = 10f;
+    [SerializeField] public float currentHealth = 10f;
+    [SerializeField] float XpWorth = 10f;
+    [SerializeField] float CurrencyWorth = 75f;
 
 
     // Use this for initialization
@@ -19,7 +21,8 @@ public class T_Health : MonoBehaviour {
         {
             if(this.gameObject.tag != "Player")
             {
-                TallyXpPlayer();
+                TallyXpPlayer(XpWorth);
+                TallyCurrency(CurrencyWorth);
             }
 
             Destroy(this.gameObject);
@@ -71,15 +74,19 @@ public class T_Health : MonoBehaviour {
         this.GetComponent<T_SkillTracker>().EarnXp(array, 10);
     }
 
-    private void TallyXpPlayer()
+    private void TallyXpPlayer(float amount)
     {
         GameObject PC = GameObject.Find("Player");
         // doenst work for the same reason that Ranged up didnt work => the Player object isnt the 'parent' of the script. Even happened using GameObject.Find need to figure out how to make this work!
         var array = PC.GetComponent<T_SkillTracker>().Player;
-        PC.GetComponent<T_SkillTracker>().EarnXp(array, 10);
-
-       
-
+        PC.GetComponent<T_SkillTracker>().EarnXp(array, amount);
         
+    }
+
+    private void TallyCurrency(float amount)
+    {
+        GameObject PC_Inventory = GameObject.Find("Inventory");
+
+        PC_Inventory.GetComponent<T_CurrencyManager>().earnCurrency(amount);
     }
 }
