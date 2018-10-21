@@ -9,10 +9,12 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
     [SerializeField] Text ScrapAmount;
     [SerializeField] Text HP;
 
+    [SerializeField] Text PlayerLevelBellow;
     [SerializeField] Text WalkingLevel;
     [SerializeField] Text DefenseLevel;
     [SerializeField] Text RangedLevel;
     [SerializeField] Text MeleeLevel;
+
     GameObject Z;
 
 
@@ -31,6 +33,7 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
     {
         var Player = Z.GetComponent<T_SkillTracker>().Player;
         PlayerLevel.text = Player[0].ToString();
+        PlayerLevelBellow.text = Player[0].ToString();
 
         var Scrap = Z.transform.GetChild(1).GetComponent<T_CurrencyManager>().currentAmount;
         ScrapAmount.text = Scrap.ToString();
@@ -38,7 +41,7 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
         var currentHP = Z.GetComponent<T_Health>().currentHealth;
         var totalHP = Z.GetComponent<T_Health>().maxHealth;
 
-        HP.text = currentHP + "/" + totalHP;
+        HP.text = currentHP.ToString("F0") + "/" + totalHP.ToString("F0");
 
 
 

@@ -8,6 +8,14 @@ public class T_PauseManager : MonoBehaviour {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject tabMenu;
 
+    public SimpleHealthBar levelBar;
+    public SimpleHealthBar walkingBar;
+    public SimpleHealthBar defenseBar;
+    public SimpleHealthBar rangedBar;
+    public SimpleHealthBar meleeBar;
+    
+  
+
     // Use this for initialization
     void Start () {
         Unpause();
@@ -67,14 +75,37 @@ public class T_PauseManager : MonoBehaviour {
 
     public void TabPause()
     {
+        updateAllBars();
         tabMenu.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0; 
     }
 
     public void TabUnpause()
     {
         tabMenu.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    void updateAllBars()
+    {
+        GameObject PC = GameObject.Find("Player");
+
+        var Z = PC.GetComponent<T_SkillTracker>().Player;
+        levelBar.UpdateBar(Z[1], Z[2]);
+
+        Z = PC.GetComponent<T_SkillTracker>().Walking;
+        walkingBar.UpdateBar(Z[1], Z[2]);
+
+        Z = PC.GetComponent<T_SkillTracker>().Defense;
+        defenseBar.UpdateBar(Z[1], Z[2]);
+
+        Z = PC.GetComponent<T_SkillTracker>().Ranged;
+        rangedBar.UpdateBar(Z[1], Z[2]);
+
+        Z = PC.GetComponent<T_SkillTracker>().Melee;
+        meleeBar.UpdateBar(Z[1], Z[2]);
+
+
     }
 
 

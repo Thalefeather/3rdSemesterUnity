@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class T_Special_Attacks : MonoBehaviour {
 
@@ -15,12 +16,19 @@ public class T_Special_Attacks : MonoBehaviour {
     [SerializeField] GameObject skillLaserPrefab;
     [SerializeField] float laser_cooldown = 2;
 
+    [SerializeField] public Button HealButton;
+    [SerializeField] public Button LaserButton;
+
+
+
 
 
 
     // Use this for initialization
     void Start()
     {
+        HealButton.onClick.AddListener(delegate { setActive(0); });
+        LaserButton.onClick.AddListener(delegate { setActive(1); });
 
     }
 
@@ -68,5 +76,10 @@ public class T_Special_Attacks : MonoBehaviour {
     {
         GameObject laser = Instantiate(skillLaserPrefab, transform.position, Quaternion.Euler(0, 0, this.GetComponent<T_Player_Shooting>().angleOfMove())) as GameObject;
         useCounter = laser_cooldown;
+    }
+
+    public void setActive(int value)
+    {
+        isActive = value;
     }
 }

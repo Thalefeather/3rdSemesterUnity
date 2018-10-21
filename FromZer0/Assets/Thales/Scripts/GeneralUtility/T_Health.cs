@@ -9,6 +9,8 @@ public class T_Health : MonoBehaviour {
     [SerializeField] float XpWorth = 10f;
     [SerializeField] float CurrencyWorth = 75f;
 
+    public SimpleHealthBar healthBar;
+
 
     // Use this for initialization
     void Start () {
@@ -39,6 +41,8 @@ public class T_Health : MonoBehaviour {
             currentHealth = currentHealth - this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg);
             Debug.Log(this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg));
             TallyXpDefense();
+
+            healthBar.UpdateBar(currentHealth, maxHealth);
         }
         else
         {
@@ -54,10 +58,12 @@ public class T_Health : MonoBehaviour {
         if(currentHealth + amount > maxHealth)
         {
             currentHealth = maxHealth;
+            healthBar.UpdateBar(currentHealth, maxHealth);
         }
         else
         {
             currentHealth = currentHealth + amount;
+            healthBar.UpdateBar(currentHealth, maxHealth);
         }
     }
 

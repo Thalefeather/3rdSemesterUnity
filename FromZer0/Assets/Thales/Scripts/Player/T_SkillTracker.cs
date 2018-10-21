@@ -39,7 +39,6 @@ public class T_SkillTracker : MonoBehaviour {
             toEarn[2] = (50*(toEarn[0]*toEarn[0])) - (150*toEarn[0]) + 200; //set the new xp to level as 100 times the level number
             //50lvl2−150lvl+200
         }
-
     }
 
     private void initiateArray(float[] Array)
