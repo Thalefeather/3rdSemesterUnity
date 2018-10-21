@@ -52,11 +52,12 @@ public class T_Player_Shooting : MonoBehaviour {
     {
         //(BUG) sometimes the direction of the projectile wont change when walking in a new direction and sometimes it wont save a new last direction
             //prolly due to when angle is called or something
+                //angle called when shot is made so only register new movement direction if direction is made and sustained during a bullet creation
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.Euler(0, 0, angleOfMove())) as GameObject;
 
         //need to program in that last movement is saved
 
-        laser.GetComponent<Rigidbody2D>().velocity = laser.transform.up.normalized * projectileSpeed;
+        //laser.GetComponent<Rigidbody2D>().velocity = laser.transform.up.normalized * projectileSpeed;
     }
 
     private float angleOfMove()

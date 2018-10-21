@@ -20,18 +20,51 @@ GameObject:
   m_Component:
   - component: {fileID: 4985480384473972}
   - component: {fileID: 212540100270395202}
-  - component: {fileID: 114795494359403342}
-  - component: {fileID: 114510308097915026}
-  - component: {fileID: 114328260140819258}
   - component: {fileID: 50989273140829114}
   - component: {fileID: 58932420402634386}
+  - component: {fileID: 114795494359403342}
+  - component: {fileID: 114538779067045444}
+  - component: {fileID: 114510308097915026}
+  - component: {fileID: 114328260140819258}
+  - component: {fileID: 114919006697633568}
+  - component: {fileID: 114119755684176156}
+  - component: {fileID: 114573860505995796}
   m_Layer: 0
-  m_Name: UFO
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1544483944947542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4540745591335974}
+  - component: {fileID: 58049489126257136}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: PlayerBody
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4540745591335974
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544483944947542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4985480384473972}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4985480384473972
 Transform:
   m_ObjectHideFlags: 1
@@ -41,7 +74,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4540745591335974}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -65,6 +99,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58049489126257136
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544483944947542}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.11
 --- !u!58 &58932420402634386
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -80,6 +129,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.11
+--- !u!114 &114119755684176156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230553466032196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc0c6113b599b74a981b49801b9e0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114328260140819258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 25
-  skillWalking: 0
+  walkXPcounter: 0
 --- !u!114 &114510308097915026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +170,35 @@ MonoBehaviour:
   laserPrefab: {fileID: 1622016870045202, guid: 9359ff8e21ade4a45b4512fde715dbf8,
     type: 2}
   canShoot: 0
+--- !u!114 &114538779067045444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230553466032196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1be9d09f60d134c92e62d7f91ddbe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  currentHealth: 200
+--- !u!114 &114573860505995796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230553466032196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c673adad473987c41a5066bd0be27b6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPerTick: 1
+  tickLength: 0.1
+  totalTicks: 10
+  cooldown: 5
+  useCounter: 0
 --- !u!114 &114795494359403342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +217,37 @@ MonoBehaviour:
   projectileSpeed: 50
   projectileFiringPeriod: 0.3
   skillWalking: 0
+--- !u!114 &114919006697633568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230553466032196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffcb5a031bec17419f3f509aebb77a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player:
+  - 1
+  - 0
+  - 100
+  Walking:
+  - 1
+  - 0
+  - 100
+  Ranged:
+  - 1
+  - 0
+  - 100
+  Melee:
+  - 1
+  - 0
+  - 100
+  Defense:
+  - 1
+  - 0
+  - 100
 --- !u!212 &212540100270395202
 SpriteRenderer:
   m_ObjectHideFlags: 1

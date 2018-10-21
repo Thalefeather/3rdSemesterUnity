@@ -5,7 +5,8 @@ using UnityEngine;
 public class T_Player_Movement : MonoBehaviour {
 
     [SerializeField] float moveSpeed = 25f;
-    [SerializeField] float skillWalking = 0;
+    [SerializeField] float walkXPcounter = 0;
+
 
     // Use this for initialization
     void Start () {
@@ -31,7 +32,18 @@ public class T_Player_Movement : MonoBehaviour {
 
         transform.position = new Vector2(newXpos, newYpos);
 
-        skillWalking = skillWalking + Mathf.Abs(deltaX) + Mathf.Abs(deltaY);
+        
+
+        walkXPcounter = walkXPcounter + Mathf.Abs(Input.GetAxis("Horizontal")) + Mathf.Abs(Input.GetAxis("Vertical"));
+
+        if(walkXPcounter>= 100)
+        {
+            walkXPcounter = 0;
+            var array = this.GetComponent<T_SkillTracker>().Walking;
+            this.GetComponent<T_SkillTracker>().EarnXp(array, 10);
+        }
+
+
         //Debug.Log(angleOfMove());
 
     }

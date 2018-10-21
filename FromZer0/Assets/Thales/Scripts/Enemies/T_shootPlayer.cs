@@ -58,7 +58,7 @@ public class T_shootPlayer : MonoBehaviour {
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
 
 
-
+        //remember to ask nelio what this code is, i dont understand
         laser.GetComponent<Rigidbody2D>().velocity = -this.gameObject.transform.up.normalized * projectileSpeed;
         laser.transform.up = laser.GetComponent<Rigidbody2D>().velocity;
         //Debug.Log(this.gameObject.transform.right.normalized);
