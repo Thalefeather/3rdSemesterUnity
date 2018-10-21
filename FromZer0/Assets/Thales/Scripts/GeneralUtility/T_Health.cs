@@ -31,13 +31,21 @@ public class T_Health : MonoBehaviour {
 
     public void TakeDamage(float dmg)
     {
-        currentHealth = currentHealth - dmg;
-        CheckIfDeadThenKill();
+        
+        
 
         if(this.gameObject.tag == "Player")
         {
+            currentHealth = currentHealth - this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg);
+            Debug.Log(this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg));
             TallyXpDefense();
         }
+        else
+        {
+            currentHealth = currentHealth - dmg;
+        }
+
+        CheckIfDeadThenKill();
     }
 
     public void Heal(float amount)

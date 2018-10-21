@@ -36,7 +36,8 @@ public class T_SkillTracker : MonoBehaviour {
             var dif = toEarn[1] - toEarn[2];
             toEarn[0]++;
             toEarn[1] = 0 + dif;
-            toEarn[2] = toEarn[0] * 100; //set the new xp to level as 100 times the level number
+            toEarn[2] = (50*(toEarn[0]*toEarn[0])) - (150*toEarn[0]) + 200; //set the new xp to level as 100 times the level number
+            //50lvl2−150lvl+200
         }
 
     }
@@ -45,8 +46,21 @@ public class T_SkillTracker : MonoBehaviour {
     {
         Array[0] = 1;
         Array[1] = 0;
-        Array[2] = Array[0] * 100;
+        Array[2] = 50 * (Array[0] * Array[0]) - (150 * Array[0]) + 200;
     }
+
+    public float defenseModifier(float damage)
+    {
+        float lvl = Defense[0];
+        float gear = 0;
+
+        float final;
+
+        final = damage*(100 / (100 + lvl + gear));
+
+        return final;
+    }
+
 
 
 }

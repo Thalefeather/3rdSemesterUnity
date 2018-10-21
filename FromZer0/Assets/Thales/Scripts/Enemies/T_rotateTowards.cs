@@ -11,7 +11,7 @@ public class T_rotateTowards : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            Debug.Log(this.gameObject.name + " colliding with: " + collision.tag);
+            //Debug.Log(this.gameObject.name + " colliding with: " + collision.tag);
             //transform.Rotate(0, 0, Time.deltaTime);
             Vector3 vectorToTarget = collision.transform.position - transform.position;
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;

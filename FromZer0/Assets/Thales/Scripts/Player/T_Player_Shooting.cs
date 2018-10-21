@@ -60,7 +60,7 @@ public class T_Player_Shooting : MonoBehaviour {
         //laser.GetComponent<Rigidbody2D>().velocity = laser.transform.up.normalized * projectileSpeed;
     }
 
-    private float angleOfMove()
+    public float angleOfMove()
     {
 
         var x = Input.GetAxis("Horizontal");
