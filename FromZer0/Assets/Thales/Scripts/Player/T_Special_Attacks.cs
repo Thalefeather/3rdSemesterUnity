@@ -12,15 +12,16 @@ public class T_Special_Attacks : MonoBehaviour {
     [SerializeField] float heal_tickLength = 0.1f;
     [SerializeField] float heal_totalTicks = 10;
     [SerializeField] float heal_cooldown = 5;
-    
+    [SerializeField] float heal_cost = 25;
+
     [SerializeField] GameObject skillLaserPrefab;
     [SerializeField] float laser_cooldown = 2;
+    [SerializeField] float laser_cost = 50;
 
     [SerializeField] public Button HealButton;
     [SerializeField] public Button LaserButton;
 
-
-
+    float spTotal;
 
 
 
@@ -29,7 +30,6 @@ public class T_Special_Attacks : MonoBehaviour {
     {
         HealButton.onClick.AddListener(delegate { setActive(0); });
         LaserButton.onClick.AddListener(delegate { setActive(1); });
-
     }
 
     // Update is called once per frame
@@ -60,26 +60,47 @@ public class T_Special_Attacks : MonoBehaviour {
     }
     void Heal()
     {
-        //need to make this framerate independant
-        float counter = 1;
-
-        while (counter <= heal_totalTicks)
+        if(checkIfEnoughSP(heal_cost))
         {
-            counter++;
-            this.GetComponent<T_Health>().Heal(heal_healPerTick);
-        }
+            //need to make this framerate independant
+            float counter = 1;
 
-        useCounter = heal_cooldown;
+            while (counter <= heal_totalTicks)
+            {
+                counter++;
+                this.GetComponent<T_Health>().Heal(heal_healPerTick);
+            }
+
+            useCounter = heal_cooldown;
+        }
     }
 
     void Laser()
     {
-        GameObject laser = Instantiate(skillLaserPrefab, transform.position, Quaternion.Euler(0, 0, this.GetComponent<T_Player_Shooting>().angleOfMove())) as GameObject;
-        useCounter = laser_cooldown;
+        if (checkIfEnoughSP(laser_cost))
+        {
+            GameObject laser = Instantiate(skillLaserPrefab, transform.position, Quaternion.Euler(0, 0, this.GetComponent<T_Player_Shooting>().angleOfMove())) as GameObject;
+            useCounter = laser_cooldown;
+        }
     }
 
     public void setActive(int value)
     {
         isActive = value;
+    }
+
+    bool checkIfEnoughSP(float cost)
+    {
+        var spTotal = this.gameObject.GetComponent<T_Health>().currentSP;
+        if (cost <= spTotal)
+        {
+            this.gameObject.GetComponent<T_Health>().LoseSP(cost);
+            return true;
+        }
+        else
+        {
+            return false;
+            //play sound effect of not enough to use skill
+        }
     }
 }

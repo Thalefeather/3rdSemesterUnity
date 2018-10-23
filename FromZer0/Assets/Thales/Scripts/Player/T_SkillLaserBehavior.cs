@@ -36,10 +36,13 @@ public class T_SkillLaserBehavior : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
+    //type => 0 == ranged
+    //type => 1 == melee
+    //type => 2 == special
     private void dealDamage(GameObject thingHit)
     {
         Debug.Log("damage dealt to enemy");
-        thingHit.GetComponent<T_Health>().TakeDamage(damage);
+        thingHit.GetComponent<T_Health>().TakeDamage(damage, 2);
 
         //Make sure method is set to public! this is example of how to call function from another object
         //thingHit.GetComponent<T_Player_Movement>().Move();

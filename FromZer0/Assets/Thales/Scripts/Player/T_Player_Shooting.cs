@@ -22,7 +22,8 @@ public class T_Player_Shooting : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         shotCounter -= Time.deltaTime;
         Fire();
 

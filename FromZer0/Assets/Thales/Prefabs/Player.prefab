@@ -28,7 +28,6 @@ GameObject:
   - component: {fileID: 114328260140819258}
   - component: {fileID: 114919006697633568}
   - component: {fileID: 114119755684176156}
-  - component: {fileID: 114573860505995796}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -170,6 +169,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc0c6113b599b74a981b49801b9e0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
+  useCounter: 0
+  heal_healPerTick: 5
+  heal_tickLength: 0.1
+  heal_totalTicks: 10
+  heal_cooldown: 5
+  heal_cost: 25
+  skillLaserPrefab: {fileID: 1759915497850230, guid: 5bea42769451cd84f97dd598f323c43c,
+    type: 2}
+  laser_cooldown: 0.2
+  laser_cost: 50
+  HealButton: {fileID: 0}
+  LaserButton: {fileID: 0}
 --- !u!114 &114328260140819258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,22 +227,10 @@ MonoBehaviour:
   currentHealth: 200
   XpWorth: 0
   CurrencyWorth: 0
---- !u!114 &114573860505995796
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230553466032196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c673adad473987c41a5066bd0be27b6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healPerTick: 1
-  tickLength: 0.1
-  totalTicks: 10
-  cooldown: 5
-  useCounter: 0
+  healthBar: {fileID: 0}
+  maxSP: 100
+  currentSP: 0
+  SPBar: {fileID: 0}
 --- !u!114 &114795494359403342
 MonoBehaviour:
   m_ObjectHideFlags: 1

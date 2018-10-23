@@ -42,9 +42,5 @@ public class T_Player_Movement : MonoBehaviour {
             var array = this.GetComponent<T_SkillTracker>().Walking;
             this.GetComponent<T_SkillTracker>().EarnXp(array, 10);
         }
-
-
-        //Debug.Log(angleOfMove());
-
     }
 }
