@@ -19,7 +19,11 @@ public class T_Special_Attacks : MonoBehaviour {
     [SerializeField] float laser_cost = 50;
 
     [SerializeField] public Button HealButton;
+    [SerializeField] public GameObject HealIcon;
     [SerializeField] public Button LaserButton;
+    [SerializeField] public GameObject LaserIcon;
+
+    public SimpleHealthBar CdBar;
 
     float spTotal;
 
@@ -40,11 +44,15 @@ public class T_Special_Attacks : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha1) && isActive==0)
         {
             isActive = 1;
+            HealIcon.SetActive(false);
+            LaserIcon.SetActive(true);
         }
         else
         if (Input.GetKeyDown(KeyCode.Alpha1) && isActive == 1)
         {
             isActive = 0;
+            HealIcon.SetActive(true);
+            LaserIcon.SetActive(false);
         }
 
         if (Input.GetButtonDown("Fire3") && useCounter <= 0 && isActive == 0)
