@@ -5,17 +5,14 @@ using UnityEngine;
 public class T_Player_Movement : MonoBehaviour {
 
     [SerializeField] float moveSpeed = 25f;
-    [SerializeField] float DashMoveSpeed = 50f;
-    [SerializeField] float DashDuration = 0.05f;
     [SerializeField] float walkXPcounter = 0;
+    private GameObject SwordChild;
 
-    bool isDashing = false;
 
 
     // Use this for initialization
     void Start () {
-        //rb = this.gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
-        //rb.bodyType = RigidbodyType2D.Dynamic;
+        SwordChild = GameObject.Find("Sword");
     }
 	
 	// Update is called once per frame
@@ -58,20 +55,48 @@ public class T_Player_Movement : MonoBehaviour {
         }
     }
 
-    private void StartDash()
+
+    public void TurnToAngle()
     {
-        isDashing = true;
-        this.transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = false;
-        //rb.velocity = new Vector2(0, 50);
 
-        Invoke("EndDash", DashDuration);
+        if (Input.GetKey(KeyCode.D))
+        {
+            //right
+            //this.GetComponent<SpriteRenderer>().sprite = Right;
+
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            SwordChild.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+
+
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            //Left
+            //this.GetComponent<SpriteRenderer>().sprite = Left;
+
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            SwordChild.transform.localRotation = Quaternion.Euler(0, 180, 0);
+
+
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            //Up
+            //this.GetComponent<SpriteRenderer>().sprite = Up;
+
+            transform.localRotation = Quaternion.Euler(0, 0, 90);
+            SwordChild.transform.localRotation = Quaternion.Euler(0, 0, 90);
+
+
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            //Down
+            //this.GetComponent<SpriteRenderer>().sprite = Down;
+            transform.localRotation = Quaternion.Euler(0, 0, -90);
+            SwordChild.transform.localRotation = Quaternion.Euler(0, 0, -90);
+
+        }
     }
-
-    private void EndDash()
-    {
-        isDashing = false;
-        this.transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true;
-        //rb.velocity = new Vector2(0, 0);
-    }
-
 }

@@ -27,6 +27,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1578324552767114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4277986475678928}
+  - component: {fileID: 114957241667145660}
+  m_Layer: 0
+  m_Name: DialogManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1593309154594860
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +90,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4277986475678928
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578324552767114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4951127443161378}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4330447326371630
 Transform:
   m_ObjectHideFlags: 1
@@ -126,6 +155,7 @@ Transform:
   - {fileID: 4397317631172870}
   - {fileID: 4562278145345480}
   - {fileID: 4330447326371630}
+  - {fileID: 4277986475678928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,3 +208,23 @@ MonoBehaviour:
   defenseBar: {fileID: 0}
   rangedBar: {fileID: 0}
   meleeBar: {fileID: 0}
+--- !u!114 &114957241667145660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578324552767114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1e90453be09b446863443391d3596e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 0}
+  sentences:
+  - I am the talky dude
+  - REAAAAD ME
+  typingSpeed: 0.1
+  continueButton: {fileID: 0}
+  Player: {fileID: 0}
+  MrTalkingDude: {fileID: 0}
+  DialogBoxMenu: {fileID: 0}

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour {
 
     public int health;
     public float speed;
-
+    public GameObject effect;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
+        Instantiate(effect, transform.position, Quaternion.identity);
         health -= damage;
         Debug.Log("BAM!");
     }
