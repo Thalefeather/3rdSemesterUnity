@@ -113,12 +113,6 @@ public class T_Player_Shooting : MonoBehaviour {
 
     }
 
-    private void lastInputX()
-    {
-        float x = Input.GetAxis("Horizontal");
-
-    }
-
 
 
 }

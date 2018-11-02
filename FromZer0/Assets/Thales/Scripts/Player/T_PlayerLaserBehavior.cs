@@ -84,6 +84,11 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
             Destroy(this.gameObject);
 
         }
+        else
+        if(collision.tag == "SolidEnviromentObject")
+        {
+            Destroy(this.gameObject);
+        }
 
     }
 

@@ -16,6 +16,8 @@ TagManager:
   - Rocket
   - EnemyBody
   - PlayerBody
+  - SolidEnviromentObject
+  - UnpassableFloor
   layers:
   - Default
   - TransparentFX

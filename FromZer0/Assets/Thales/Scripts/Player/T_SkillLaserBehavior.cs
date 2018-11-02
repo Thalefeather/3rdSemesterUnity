@@ -64,11 +64,6 @@ public class T_SkillLaserBehavior : MonoBehaviour {
             //hitStop(collision);
         }
 
-        if(collision.tag == "Enviroment")
-        {
-            Destroy(this.gameObject);
-        }
-
     }
 
     private void TallyXpRanged()

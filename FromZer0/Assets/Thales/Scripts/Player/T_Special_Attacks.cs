@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class T_Special_Attacks : MonoBehaviour {
 
-    [SerializeField] float isActive = 0;
+    [SerializeField] float isActive = 0;//skill that is active (laser, heal, etc)
     [SerializeField] float useCounter = 0;
+    float currentCDMax = 0;
 
     [SerializeField] float heal_healPerTick = 1;
     [SerializeField] float heal_tickLength = 0.1f;
@@ -39,7 +40,7 @@ public class T_Special_Attacks : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        useCounter -= Time.deltaTime;
+        useCounter += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && isActive==0)
         {
@@ -55,15 +56,17 @@ public class T_Special_Attacks : MonoBehaviour {
             LaserIcon.SetActive(false);
         }
 
-        if (Input.GetButtonDown("Fire3") && useCounter <= 0 && isActive == 0)
+        if (Input.GetButtonDown("Fire3") && useCounter >= currentCDMax && isActive == 0)
         {
             Heal();
         }
 
-        if (Input.GetButtonDown("Fire3") && useCounter <= 0 && isActive == 1)
+        if (Input.GetButtonDown("Fire3") && useCounter >= currentCDMax && isActive == 1)
         {
             Laser();
         }
+
+        CdBar.UpdateBar(useCounter, currentCDMax);
 
     }
     void Heal()
@@ -78,8 +81,8 @@ public class T_Special_Attacks : MonoBehaviour {
                 counter++;
                 this.GetComponent<T_Health>().Heal(heal_healPerTick);
             }
-
-            useCounter = heal_cooldown;
+            currentCDMax = heal_cooldown;
+            useCounter = 0;
         }
     }
 
@@ -88,7 +91,8 @@ public class T_Special_Attacks : MonoBehaviour {
         if (checkIfEnoughSP(laser_cost))
         {
             GameObject laser = Instantiate(skillLaserPrefab, transform.position, Quaternion.Euler(0, 0, this.GetComponent<T_Player_Shooting>().angleOfMove())) as GameObject;
-            useCounter = laser_cooldown;
+            currentCDMax = laser_cooldown;
+            useCounter = 0;
         }
     }
 

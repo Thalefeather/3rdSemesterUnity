@@ -52,5 +52,10 @@ public class T_EnemyLaserBehavior : MonoBehaviour {
             Destroy(this.gameObject);
         }
 
+        if (collision.tag == "SolidEnviromentObject")
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 }

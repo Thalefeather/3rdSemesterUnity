@@ -62,7 +62,6 @@ public class T_PauseManager : MonoBehaviour {
 
     public void Pause()
     {
-        //bug where paused can still do normal commands, need to disable all inputs to solve, prolly have to create input manager
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
