@@ -19,9 +19,8 @@ public class T_Special_Attacks : MonoBehaviour {
     [SerializeField] float laser_cooldown = 2;
     [SerializeField] float laser_cost = 50;
 
-    [SerializeField] public Button HealButton;
+    
     [SerializeField] public GameObject HealIcon;
-    [SerializeField] public Button LaserButton;
     [SerializeField] public GameObject LaserIcon;
 
     public SimpleHealthBar CdBar;
@@ -33,8 +32,6 @@ public class T_Special_Attacks : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        HealButton.onClick.AddListener(delegate { setActive(0); });
-        LaserButton.onClick.AddListener(delegate { setActive(1); });
     }
 
     // Update is called once per frame
