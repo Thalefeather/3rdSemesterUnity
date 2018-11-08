@@ -93,28 +93,13 @@ public class T_Health : MonoBehaviour {
         }
     }
 
-    private void HitStunAndKnockback()
-    {
-
-    }
-
-    private void DeathAnimation()
-    {
-
-    }
-
-    private void DisplayHealth()
-    {
-
-    }
-
     private void TallyXpDefense()
     {
         var array = this.GetComponent<T_SkillTracker>().Defense;
         this.GetComponent<T_SkillTracker>().EarnXp(array, 10);
     }
 
-    private void TallyXpPlayer(float amount)
+    public void TallyXpPlayer(float amount)
     {
         //GameObject PC = GameObject.Find("Player");
         // doenst work for the same reason that Ranged up didnt work => the Player object isnt the 'parent' of the script. Even happened using GameObject.Find need to figure out how to make this work!
@@ -148,5 +133,16 @@ public class T_Health : MonoBehaviour {
     {
         currentSP = currentSP - amount;
         SPBar.UpdateBar(currentSP, maxSP);
+    }
+
+    public void FullRestore()
+    {
+        //currentSP = maxSP;
+        //currentHealth = maxHealth;
+
+        EarnSP(maxSP);
+        Heal(maxHealth);
+
+        //Debug.Log("FULLRESTORE IN THEALHT");
     }
 }

@@ -28,6 +28,7 @@ public class Dialog : MonoBehaviour {
         {
             StartCoroutine(Type());
             MrTalkingDude.GetComponent<CircleCollider2D>().enabled = false;
+            DialogBoxMenu.SetActive(true);
         }
         
         //jump sentence
@@ -68,6 +69,7 @@ public class Dialog : MonoBehaviour {
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
+            DialogBoxMenu.SetActive(false);
         }   
 
     }

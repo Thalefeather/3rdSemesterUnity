@@ -9,12 +9,15 @@ public class Attack : MonoBehaviour
     public float startTimeBtwAttack;
     public int AnimAtackSpeed;
 
-    public int damage = 25;
+    public float rawDamage = 25;
+    public float finalDamage = 0;
     private ShakeScreen shake;
 
     Collider2D swordcol;
    
     Animator myAnimator;
+
+    GameObject PC;
 
     void Start()
     {
@@ -75,8 +78,23 @@ public class Attack : MonoBehaviour
     //2 special
     private void dealDamage(GameObject thingHit)
     {
+        PC = GameObject.Find("Player");
+
         Debug.Log("damage dealt to enemy");
-        thingHit.GetComponent<T_Health>().TakeDamage(damage, 1);
+
+        Debug.Log(finalDamage);
+        finalDamage = rawDamage + PC.GetComponent<T_SkillTracker>().Melee[0];
+        thingHit.GetComponent<T_Health>().TakeDamage(finalDamage, 1);
+
+        TallyXpMelee();
+    }
+
+    private void TallyXpMelee()
+    {
+        PC = GameObject.Find("Player");
+        // doenst work for the same reason that Ranged up didnt work => the Player object isnt the 'parent' of the script. Even happened using GameObject.Find need to figure out how to make this work!
+        var array = PC.GetComponent<T_SkillTracker>().Melee;
+        PC.GetComponent<T_SkillTracker>().EarnXp(array, 20);
     }
 }
 

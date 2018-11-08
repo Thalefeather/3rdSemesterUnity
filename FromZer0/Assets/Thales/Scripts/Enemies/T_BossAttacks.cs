@@ -15,9 +15,12 @@ public class T_BossAttacks : MonoBehaviour {
     [SerializeField] bool AP1 = false;
     [SerializeField] bool AP2 = false;
 
+    float patternCounter = 0;
+    int meteorTotalAmountCounter = 0;
+
     // Use this for initialization
     void Start () {
-        AttackPattern1(false);
+       //AttackPattern1(false);
        //setUseMeteor();
     }
 	
@@ -80,10 +83,70 @@ public class T_BossAttacks : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(useMeteor && meteorCounter >= meteorDelay && collision.tag == "Player")
+        if(useMeteor && meteorCounter >= meteorDelay && collision.tag == "Player" && meteorTotalAmountCounter<2)
         {
             Meteor(collision);
             meteorCounter = 0;
+            meteorTotalAmountCounter++;
+
+            if(meteorTotalAmountCounter>2)
+            {
+                useMeteor = false;
+            }
+        }
+
+        if(collision.tag == "Player")
+        {
+            chooseAttack();
+        }
+        
+    }
+
+    private void chooseAttack()
+    {
+        
+        float randomNumber;
+
+        patternCounter = patternCounter + Time.deltaTime;
+        if(patternCounter == 0 || patternCounter == 4)
+        {
+            Debug.Log("counter " + patternCounter);
+        }
+        
+        if(patternCounter >= 5)
+        {
+            randomNumber = Random.Range(0,4);
+            Debug.Log("randomNumber "+randomNumber);
+
+            if(randomNumber == 0)
+            {
+                Debug.Log("attack choice 0");
+                AttackPattern1(true);
+                patternCounter = 0;
+            }
+            else if(randomNumber == 1)
+            {
+                Debug.Log("attack choice 1");
+                AttackPattern1(false);
+                patternCounter = 0;
+            }
+            else if (randomNumber == 2)
+            {
+                Debug.Log("attack choice 2");
+                //AttackPattern2();
+                AP2 = true;
+                meteorTotalAmountCounter = 0;
+                patternCounter = 0;
+            }
+            else if (randomNumber >= 3)
+            {
+                Debug.Log("attack choice 3");
+                AttackPattern1(true);
+                //AttackPattern2();
+                AP2 = true;
+                meteorTotalAmountCounter = 0;
+                patternCounter = 0;
+            }
         }
     }
 

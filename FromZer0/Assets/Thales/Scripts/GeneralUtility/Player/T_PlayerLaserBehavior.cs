@@ -6,7 +6,10 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
 
     [SerializeField] float projectileSpeed = 50f;
     [SerializeField] float timeToFade = 0.5f;
-    [SerializeField] float damage = 10f;
+    [SerializeField] float rawDamage = 10f;
+    [SerializeField] float finalDamage = 0f;
+
+    GameObject PC;
 
     // Use this for initialization
     void Start () {
@@ -16,7 +19,6 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         MoveForward();
-
     }
 
     void MoveForward()
@@ -42,9 +44,12 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
     //type => 2 == special
     private void dealDamage(GameObject thingHit)
     {
+        PC = GameObject.Find("Player");
         Debug.Log("damage dealt to enemy");
-        thingHit.GetComponent<T_Health>().TakeDamage(damage, 0);
-
+        
+        finalDamage = rawDamage + PC.GetComponent<T_SkillTracker>().Ranged[0];
+        thingHit.GetComponent<T_Health>().TakeDamage(finalDamage, 0);
+        Debug.Log(finalDamage);
         //Make sure method is set to public! this is example of how to call function from another object
         //thingHit.GetComponent<T_Player_Movement>().Move();
 
@@ -100,15 +105,6 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
         PC.GetComponent<T_SkillTracker>().EarnXp(array, 10);
     }
 
-    private void hitStop(Collider2D enemy)
-    {
-
-        //makes enemy invisible but can still do stuff
-        enemy.transform.parent.GetComponent<Renderer>().enabled = false;
-
-
-
-    }
 
     
 

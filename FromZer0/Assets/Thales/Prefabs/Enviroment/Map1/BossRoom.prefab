@@ -124,9 +124,9 @@ GameObject:
   - component: {fileID: 4981851252510906}
   - component: {fileID: 212196838841235124}
   - component: {fileID: 50191509343697760}
+  - component: {fileID: 61408481744044218}
   - component: {fileID: 114048750113526238}
   - component: {fileID: 114668678583015088}
-  - component: {fileID: 61408481744044218}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -198,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1133267332556978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.41, y: -17.22, z: 0}
+  m_LocalPosition: {x: -0.4, y: -17.13, z: 0}
   m_LocalScale: {x: 0.83811605, y: 2.053746, z: 1}
   m_Children:
   - {fileID: 4137007254465578}
@@ -239,7 +239,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382778659057172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -325.2, y: 89.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4981851252510906}
@@ -253,7 +253,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661644217450344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 89.7, z: 0}
+  m_LocalPosition: {x: 0.3, y: 89.7, z: 0}
   m_LocalScale: {x: 5.81, y: 2.45, z: 1}
   m_Children:
   - {fileID: 4838214821011978}
