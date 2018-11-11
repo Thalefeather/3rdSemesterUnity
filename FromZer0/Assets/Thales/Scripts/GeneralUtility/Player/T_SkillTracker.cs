@@ -15,6 +15,12 @@ public class T_SkillTracker : MonoBehaviour {
     [SerializeField] public float[] Melee = new float[3];
     [SerializeField] public float[] Defense = new float[3];
 
+    public float defenseGear=0;
+    public float meleeGear=0;
+
+
+
+
     private void Start()
     {
         initiateArray(Player);
@@ -38,6 +44,8 @@ public class T_SkillTracker : MonoBehaviour {
             toEarn[1] = 0 + dif;
             toEarn[2] = (50*(toEarn[0]*toEarn[0])) - (150*toEarn[0]) + 200; //set the new xp to level as 100 times the level number
             //50lvl2−150lvl+200
+
+            EarnXp(toEarn, 0);
         }
     }
 
@@ -51,11 +59,10 @@ public class T_SkillTracker : MonoBehaviour {
     public float defenseModifier(float damage)
     {
         float lvl = Defense[0];
-        float gear = 0;
 
         float final;
 
-        final = damage*(100 / (100 + lvl + gear));
+        final = damage*(100 / (100 + lvl + defenseGear));
 
         return final;
     }

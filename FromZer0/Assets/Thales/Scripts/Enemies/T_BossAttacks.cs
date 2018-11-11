@@ -15,7 +15,7 @@ public class T_BossAttacks : MonoBehaviour {
     [SerializeField] bool AP1 = false;
     [SerializeField] bool AP2 = false;
 
-    float patternCounter = 0;
+    float patternCounter = 4.5f;
     int meteorTotalAmountCounter = 0;
 
     // Use this for initialization

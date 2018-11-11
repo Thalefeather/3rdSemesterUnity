@@ -83,7 +83,7 @@ public class Attack : MonoBehaviour
         Debug.Log("damage dealt to enemy");
 
         Debug.Log(finalDamage);
-        finalDamage = rawDamage + PC.GetComponent<T_SkillTracker>().Melee[0];
+        finalDamage = rawDamage + PC.GetComponent<T_SkillTracker>().Melee[0] + PC.GetComponent<T_SkillTracker>().meleeGear;
         thingHit.GetComponent<T_Health>().TakeDamage(finalDamage, 1);
 
         TallyXpMelee();

@@ -32,7 +32,7 @@ public class Dialog : MonoBehaviour {
         }
         
         //jump sentence
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             NextSentence();
         }

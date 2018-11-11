@@ -248,7 +248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTimeBtwAttack: 0.5
   AnimAtackSpeed: 3
-  damage: 25
+  rawDamage: 25
+  finalDamage: 0
 --- !u!114 &114119755684176156
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -17,6 +17,7 @@ public class T_Health : MonoBehaviour {
     public SimpleHealthBar SPBar;
 
     GameObject PC;
+    private Rigidbody2D rb;
 
 
     // Use this for initialization
@@ -24,6 +25,7 @@ public class T_Health : MonoBehaviour {
         if (this.gameObject.tag == "Player")
         {
             SPBar.UpdateBar(currentSP, maxSP);
+            rb = GetComponent<Rigidbody2D>();
         }
         else
         {
@@ -52,9 +54,17 @@ public class T_Health : MonoBehaviour {
     {
         if (this.gameObject.tag == "Player")
         {
-            currentHealth = currentHealth - this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg);
-            Debug.Log(this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg));
-            TallyXpDefense();
+            Debug.Log("velocity while taking damge: "+rb.velocity.x + " " +rb.velocity.y);
+            if (rb.velocity.x == 0 && rb.velocity.y == 0)
+            { 
+                currentHealth = currentHealth - this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg);
+                Debug.Log(this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg));
+                TallyXpDefense();
+            }
+            else
+            {
+                Debug.Log("IFRAMES!");
+            }
 
             healthBar.UpdateBar(currentHealth, maxHealth);
         }
@@ -110,7 +120,7 @@ public class T_Health : MonoBehaviour {
 
     private void TallyCurrency(float amount)
     {
-        GameObject PC_Inventory = GameObject.Find("Inventory");
+        GameObject PC_Inventory = GameObject.Find("TInventory");
 
         PC_Inventory.GetComponent<T_CurrencyManager>().earnCurrency(amount);
     }
