@@ -106,7 +106,7 @@ public class T_Health : MonoBehaviour {
     private void TallyXpDefense()
     {
         var array = this.GetComponent<T_SkillTracker>().Defense;
-        this.GetComponent<T_SkillTracker>().EarnXp(array, 10);
+        this.GetComponent<T_SkillTracker>().EarnXp(array, 10, false);
     }
 
     public void TallyXpPlayer(float amount)
@@ -114,7 +114,7 @@ public class T_Health : MonoBehaviour {
         //GameObject PC = GameObject.Find("Player");
         // doenst work for the same reason that Ranged up didnt work => the Player object isnt the 'parent' of the script. Even happened using GameObject.Find need to figure out how to make this work!
         var array = PC.GetComponent<T_SkillTracker>().Player;
-        PC.GetComponent<T_SkillTracker>().EarnXp(array, amount);
+        PC.GetComponent<T_SkillTracker>().EarnXp(array, amount, true);
         
     }
 

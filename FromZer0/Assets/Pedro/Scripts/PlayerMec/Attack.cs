@@ -94,7 +94,7 @@ public class Attack : MonoBehaviour
         PC = GameObject.Find("Player");
         // doenst work for the same reason that Ranged up didnt work => the Player object isnt the 'parent' of the script. Even happened using GameObject.Find need to figure out how to make this work!
         var array = PC.GetComponent<T_SkillTracker>().Melee;
-        PC.GetComponent<T_SkillTracker>().EarnXp(array, 20);
+        PC.GetComponent<T_SkillTracker>().EarnXp(array, 20, false);
     }
 }
 

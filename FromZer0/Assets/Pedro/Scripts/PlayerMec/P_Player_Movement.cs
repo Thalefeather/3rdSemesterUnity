@@ -74,7 +74,7 @@ public class P_Player_Movement : MonoBehaviour {
         {
             walkXPcounter = 0;
             var array = this.GetComponent<T_SkillTracker>().Walking;
-            this.GetComponent<T_SkillTracker>().EarnXp(array, 10);
+            this.GetComponent<T_SkillTracker>().EarnXp(array, 10, false);
         }
     }
 

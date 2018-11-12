@@ -5,7 +5,9 @@ using UnityEngine;
 public class T_SkillTracker : MonoBehaviour {
     //should be a different way to do it where i can have all the XP gains saved in this script, try later though.
 
-
+    [SerializeField] GameObject PC_CanvasSkillUp;
+    [SerializeField] GameObject PC_CanvasLevelUp;
+    [Space]
     //[0] is lvl
     //[1] is xp
     //[2] is xp needed to lvl
@@ -33,7 +35,7 @@ public class T_SkillTracker : MonoBehaviour {
     }
 
 
-    public void EarnXp(float[] toEarn, float amount)
+    public void EarnXp(float[] toEarn, float amount, bool Playerlevel)
     {
         toEarn[1] = toEarn[1] + amount;
 
@@ -42,10 +44,20 @@ public class T_SkillTracker : MonoBehaviour {
             var dif = toEarn[1] - toEarn[2];
             toEarn[0]++;
             toEarn[1] = 0 + dif;
-            toEarn[2] = (50*(toEarn[0]*toEarn[0])) - (150*toEarn[0]) + 200; //set the new xp to level as 100 times the level number
+            toEarn[2] = (50*(toEarn[0]*toEarn[0])) - (150*toEarn[0]) + 200; 
             //50lvl2−150lvl+200
 
-            EarnXp(toEarn, 0);
+            EarnXp(toEarn, 0, Playerlevel);
+
+            if(Playerlevel)
+            {
+                levelUpOn();
+            }
+            else
+            {
+                skillUpOn();
+            }
+            
         }
     }
 
@@ -65,6 +77,26 @@ public class T_SkillTracker : MonoBehaviour {
         final = damage*(100 / (100 + lvl + defenseGear));
 
         return final;
+    }
+
+    private void skillUpOn()
+    {
+        PC_CanvasSkillUp.SetActive(true);
+        Invoke("skillUpOff", 1f);
+    }
+    private void skillUpOff()
+    {
+        PC_CanvasSkillUp.SetActive(false);
+    }
+
+    private void levelUpOn()
+    {
+        PC_CanvasLevelUp.SetActive(true);
+        Invoke("levelUpOff", 1f);
+    }
+    private void levelUpOff()
+    {
+        PC_CanvasLevelUp.SetActive(false);
     }
 
 

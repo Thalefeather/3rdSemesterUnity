@@ -19,6 +19,8 @@ public class T_CurrencyManager : MonoBehaviour {
     public void earnCurrency(float amount)
     {
         currentAmount = currentAmount + amount;
+
+        Debug.Log("Earned " + amount+" Scrap");
     }
     
     public void loseCurrency(float amount)

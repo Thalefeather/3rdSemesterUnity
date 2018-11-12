@@ -7,7 +7,7 @@ public class T_PauseManager : MonoBehaviour {
     [SerializeField] bool isPaused = false;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject tabMenu;
-
+    [Space]
     public SimpleHealthBar levelBar;
     public SimpleHealthBar walkingBar;
     public SimpleHealthBar defenseBar;

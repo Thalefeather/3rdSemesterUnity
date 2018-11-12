@@ -102,7 +102,7 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
         GameObject PC = GameObject.Find("Player");
         // doenst work for the same reason that Ranged up didnt work => the Player object isnt the 'parent' of the script. Even happened using GameObject.Find need to figure out how to make this work!
         var array = PC.GetComponent<T_SkillTracker>().Ranged;
-        PC.GetComponent<T_SkillTracker>().EarnXp(array, 10);
+        PC.GetComponent<T_SkillTracker>().EarnXp(array, 10, false);
     }
 
 

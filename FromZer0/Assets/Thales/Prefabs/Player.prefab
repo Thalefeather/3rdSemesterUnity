@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212540100270395202}
   - component: {fileID: 50989273140829114}
   - component: {fileID: 58932420402634386}
-  - component: {fileID: 114795494359403342}
   - component: {fileID: 114538779067045444}
   - component: {fileID: 114510308097915026}
   - component: {fileID: 114328260140819258}
@@ -81,7 +80,7 @@ GameObject:
   - component: {fileID: 4886781228676288}
   - component: {fileID: 114979079740034230}
   m_Layer: 0
-  m_Name: Inventory
+  m_Name: TInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,6 +287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashSpeed: 50
   startDashTime: 0.1
+  timeSpentDashing: 1
+  isDashing: 0
 --- !u!114 &114328260140819258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,24 +338,6 @@ MonoBehaviour:
   maxSP: 100
   currentSP: 0
   SPBar: {fileID: 0}
---- !u!114 &114795494359403342
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230553466032196}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1b0a16ce7ba1884fbcbc5eae52e4eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 25
-  padding: 2
-  laserPrefab: {fileID: 1622016870045202, guid: 9359ff8e21ade4a45b4512fde715dbf8,
-    type: 2}
-  projectileSpeed: 50
-  projectileFiringPeriod: 0.3
-  skillWalking: 0
 --- !u!114 &114919006697633568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,6 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffcb5a031bec17419f3f509aebb77a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PC_CanvasSkillUp: {fileID: 0}
+  PC_CanvasLevelUp: {fileID: 0}
   Player:
   - 1
   - 0
@@ -386,6 +371,8 @@ MonoBehaviour:
   - 1
   - 0
   - 100
+  defenseGear: 0
+  meleeGear: 0
 --- !u!114 &114979079740034230
 MonoBehaviour:
   m_ObjectHideFlags: 1
