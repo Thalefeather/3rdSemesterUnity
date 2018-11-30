@@ -19,6 +19,7 @@ public class PInventory : MonoBehaviour
         {
             itemSlots[i].OnRightClickEvent += OnItemRightClickedEvent;
         }
+        RefreshUI();
     }
 
     private void OnValidate()

@@ -1046,7 +1046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1250188761416196
 GameObject:
   m_ObjectHideFlags: 1
@@ -5050,6 +5050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114633277291958666}
+  _item: {fileID: 0}
 --- !u!114 &114060878795082598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5509,6 +5510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114368666686704668}
+  _item: {fileID: 0}
   EquipmentType: 1
 --- !u!114 &114117340360895318
 MonoBehaviour:
@@ -6017,6 +6019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114906779035784234}
+  _item: {fileID: 0}
 --- !u!114 &114179559844889940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6062,6 +6065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114070980312325230}
+  _item: {fileID: 0}
 --- !u!114 &114194530466012014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6200,7 +6204,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5s
+  m_Text: 0.2s
 --- !u!114 &114211208148499266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6445,6 +6449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114762773551705736}
+  _item: {fileID: 0}
 --- !u!114 &114252501944118950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6732,6 +6737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114294670433432338}
+  _item: {fileID: 0}
 --- !u!114 &114307896808396212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6744,6 +6750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114140478892851748}
+  _item: {fileID: 0}
   EquipmentType: 4
 --- !u!114 &114318591581032372
 MonoBehaviour:
@@ -6842,6 +6849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114252501944118950}
+  _item: {fileID: 0}
   EquipmentType: 6
 --- !u!114 &114341366356097002
 MonoBehaviour:
@@ -6969,6 +6977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114106776848482190}
+  _item: {fileID: 0}
 --- !u!114 &114360852268326862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7163,6 +7172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114530831490798788}
+  _item: {fileID: 0}
 --- !u!114 &114375498830745818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8242,6 +8252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114747455465188470}
+  _item: {fileID: 0}
 --- !u!114 &114468547244172950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8360,6 +8371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114496490148430074}
+  _item: {fileID: 0}
   EquipmentType: 7
 --- !u!114 &114476974275989358
 MonoBehaviour:
@@ -8463,6 +8475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114639628662427910}
+  _item: {fileID: 0}
 --- !u!114 &114484355088805306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8663,6 +8676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114156328051081460}
+  _item: {fileID: 11400000, guid: 8cf0860d05406364e9b0d8b42f392015, type: 2}
 --- !u!114 &114503890169271002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8867,6 +8881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114559515249202422}
+  _item: {fileID: 0}
   EquipmentType: 5
 --- !u!114 &114518032828321730
 MonoBehaviour:
@@ -9389,6 +9404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114864846255586686}
+  _item: {fileID: 0}
 --- !u!114 &114588673278968970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9518,6 +9534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114091200432169356}
+  _item: {fileID: 0}
 --- !u!114 &114593474772587948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10254,6 +10271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114229710360039024}
+  _item: {fileID: 0}
 --- !u!114 &114675237171666088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10471,6 +10489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114405124787435668}
+  _item: {fileID: 0}
 --- !u!114 &114709167453751676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11057,6 +11076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114818756880580200}
+  _item: {fileID: 0}
 --- !u!114 &114790811156035116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11868,6 +11888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114050092986634706}
+  _item: {fileID: 0}
   EquipmentType: 0
 --- !u!114 &114864846255586686
 MonoBehaviour:
@@ -12160,6 +12181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114989028088003702}
+  _item: {fileID: 11400000, guid: b090ca7f4a697f74789aa5c8167d6e65, type: 2}
 --- !u!114 &114883090257841612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12484,6 +12506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114636420227583454}
+  _item: {fileID: 0}
 --- !u!114 &114926236672705508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12693,6 +12716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 114991508900442328}
+  _item: {fileID: 0}
 --- !u!114 &114945770770442706
 MonoBehaviour:
   m_ObjectHideFlags: 1

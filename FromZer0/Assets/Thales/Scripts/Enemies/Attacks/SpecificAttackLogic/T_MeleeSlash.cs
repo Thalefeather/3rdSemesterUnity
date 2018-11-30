@@ -7,7 +7,7 @@ public class T_MeleeSlash : MonoBehaviour {
     [SerializeField] float timeToFade = 0.5f;
     [SerializeField] float damage = 25f;
     [SerializeField] bool hit = false;
-    
+
 
     private void Start()
     {

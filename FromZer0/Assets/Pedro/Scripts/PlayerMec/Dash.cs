@@ -118,4 +118,5 @@ public class Dash : MonoBehaviour {
     {
         isDashing = false;
     }
+
 }

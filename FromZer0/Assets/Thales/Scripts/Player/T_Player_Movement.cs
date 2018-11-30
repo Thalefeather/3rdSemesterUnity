@@ -12,12 +12,13 @@ public class T_Player_Movement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        SwordChild = GameObject.Find("Sword");
+        //SwordChild = GameObject.Find("Sword");
     }
 	
 	// Update is called once per frame
 	void Update () {
         Move();
+        WalkingLevelUp();
     }
 
     private void Move()
@@ -27,9 +28,6 @@ public class T_Player_Movement : MonoBehaviour {
 
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
-
-        //var newXpos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
-        //var newYpos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
 
         float newXpos;
         float newYpos;
@@ -42,18 +40,16 @@ public class T_Player_Movement : MonoBehaviour {
 
         transform.position = new Vector2(newXpos, newYpos);
         //MoveAngle();
-        TurnToAngle();
+        //TurnToAngle();
 
 
-        //this will lead to xp always be earned when holding directional inputs, nezed to adapt so its only when walking
-        walkXPcounter = walkXPcounter + Mathf.Abs(Input.GetAxis("Horizontal")) + Mathf.Abs(Input.GetAxis("Vertical"));
-
-        if(walkXPcounter>= 100)
+        //code to change the players "up" to the direction of movement
+        if(inputX!=0 || inputY!=0)
         {
-            walkXPcounter = 0;
-            var array = this.GetComponent<T_SkillTracker>().Walking;
-            this.GetComponent<T_SkillTracker>().EarnXp(array, 10, false);
+            this.gameObject.transform.up = new Vector2(inputX, inputY).normalized;
         }
+
+
     }
 
 
@@ -194,6 +190,19 @@ public class T_Player_Movement : MonoBehaviour {
 
 
 
+    }
+
+    private void WalkingLevelUp()
+    {
+        //this will lead to xp always be earned when holding directional inputs, nezed to adapt so its only when walking
+        walkXPcounter = walkXPcounter + Mathf.Abs(Input.GetAxis("Horizontal")) + Mathf.Abs(Input.GetAxis("Vertical"));
+
+        if (walkXPcounter >= 100)
+        {
+            walkXPcounter = 0;
+            var array = this.GetComponent<T_SkillTracker>().Walking;
+            this.GetComponent<T_SkillTracker>().EarnXp(array, 10, false);
+        }
     }
 
 

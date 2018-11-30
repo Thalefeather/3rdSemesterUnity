@@ -10,7 +10,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public event Action<Item> OnRightClickEvent;
 
-    private Item _item;
+    [SerializeField] private Item _item;
     public Item Item
     {
         get { return _item; }
@@ -39,7 +39,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             if (Item != null)
             {
                 Debug.Log("click2");
-                OnRightClickEvent(Item);//this doesnt work
+                OnRightClickEvent(Item);//works in editor, not in build
                 
             }
                 

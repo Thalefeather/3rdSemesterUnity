@@ -8,18 +8,11 @@ public class T_Player_Shooting : MonoBehaviour {
     [SerializeField] float rateOfFire = 0.5f;
 
     [SerializeField] float shotCounter=0;
-    //[SerializeField] float minTimeBetweenShots = 0.2f;
-    //[SerializeField] float maxTimeBetweenShots = 3f;
 
     [SerializeField] GameObject laserPrefab;
 
     [SerializeField] bool canShoot;
     float tempAngle;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -30,11 +23,6 @@ public class T_Player_Shooting : MonoBehaviour {
         //Debug.Log(angleOfMove());
         //Debug.Log(lastMovedAngle());
         //Debug.Log(Input.GetAxis("Horizontal"));
-        
-
-
-
-
     }
 
     private void Fire()
@@ -51,14 +39,11 @@ public class T_Player_Shooting : MonoBehaviour {
 
     private void shoot()
     {
-        //(BUG) sometimes the direction of the projectile wont change when walking in a new direction and sometimes it wont save a new last direction
-            //prolly due to when angle is called or something
-                //angle called when shot is made so only register new movement direction if direction is made and sustained during a bullet creation
-        GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.Euler(0, 0, angleOfMove())) as GameObject;
+        //THIS IS THE OLD WAY TO DO IT, IT WORKS
+        //GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.Euler(0, 0, angleOfMove())) as GameObject;
 
-        //need to program in that last movement is saved
-
-        //laser.GetComponent<Rigidbody2D>().velocity = laser.transform.up.normalized * projectileSpeed;
+        //ATTEMPT AT NEW WAY
+        GameObject laser = Instantiate(laserPrefab, transform.position, this.transform.rotation); //Quaternion.Euler Z rotation is anticlockwise
     }
 
     public float angleOfMove()

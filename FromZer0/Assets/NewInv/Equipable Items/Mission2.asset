@@ -14,7 +14,7 @@ MonoBehaviour:
   ItemName: 
   Icon: {fileID: 0}
   ID: 1
-  TimeToComplete: 0
+  TimeToComplete: 9999999
   ScrapReward: 999999999
   XPReward: 0
   Description: Just for demonstration purposes!
