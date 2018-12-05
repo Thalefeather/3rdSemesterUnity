@@ -62,9 +62,9 @@ GameObject:
   - component: {fileID: 114098794407032450}
   - component: {fileID: 114648450478558844}
   - component: {fileID: 114804658639086718}
-  - component: {fileID: 114119039223606830}
   - component: {fileID: 114154826809745804}
   - component: {fileID: 114372462119865104}
+  - component: {fileID: 114684353780750956}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -249,21 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 25
   walkXPcounter: 0
---- !u!114 &114119039223606830
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1805536427172514}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e70bc0b77ef3c14f9c0555dc0732b30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSpeed: 50
-  startDashTime: 0.1
-  timeSpentDashing: 1
-  isDashing: 0
+  canMove: 0
 --- !u!114 &114135780417999636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -297,6 +283,8 @@ MonoBehaviour:
   dashSpeed: 50
   dashDuration: 0.15
   dashCD: 0.5
+  dashCDCounter: 0
+  rawDashAmount: 2
 --- !u!114 &114274682285616542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,6 +362,23 @@ MonoBehaviour:
   - 100
   defenseGear: 0
   meleeGear: 0
+--- !u!114 &114684353780750956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805536427172514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1597227f88925849a292ac23163649d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: 0
+  moving: 0
+  dashing: 0
+  paused: 0
+  talking: 0
+  endOfSentence: 0
 --- !u!114 &114804658639086718
 MonoBehaviour:
   m_ObjectHideFlags: 1

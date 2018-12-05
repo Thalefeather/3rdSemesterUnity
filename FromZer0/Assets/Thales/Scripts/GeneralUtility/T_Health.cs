@@ -19,6 +19,9 @@ public class T_Health : MonoBehaviour {
     GameObject PC;
     private Rigidbody2D rb;
 
+    public GameObject pauseManager;
+    private bool dead = false;
+
 
     // Use this for initialization
     void Start () {
@@ -41,9 +44,15 @@ public class T_Health : MonoBehaviour {
             {
                 TallyXpPlayer(XpWorth);
                 TallyCurrency(CurrencyWorth);
+                Destroy(this.gameObject);
+            }
+            else if(this.gameObject.tag == "Player" && !dead)
+            {
+                pauseManager.GetComponent<T_PauseManager>().DeadPause();
+                dead = true;
             }
 
-            Destroy(this.gameObject);
+            
         }
     }
 

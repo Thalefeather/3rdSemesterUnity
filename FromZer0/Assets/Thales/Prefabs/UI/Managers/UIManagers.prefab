@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4277986475678928}
   - component: {fileID: 114957241667145660}
+  - component: {fileID: 114208142208539026}
   m_Layer: 0
   m_Name: DialogManager
   m_TagString: Untagged
@@ -189,6 +190,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114208142208539026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1578324552767114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c74f3b6727a9146839a3471fce3232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 0}
+  continueButton: {fileID: 0}
+  DialogBoxMenu: {fileID: 0}
+  conversastionAvailableIcon: {fileID: 0}
+  sentences:
+  - this is a test this is a test
+  - 2 2 2 2 2 2 2 2 2 2 2 2
+  typingSpeed: 0.1
+  endOfSentence: 0
+  speedUpTyping: 0
+  inConversation: 0
+  touchingNPC: 0
+  interact: 0
 --- !u!114 &114264219737771524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,23 +293,20 @@ MonoBehaviour:
   defenseBar: {fileID: 0}
   rangedBar: {fileID: 0}
   meleeBar: {fileID: 0}
+  tabPaused: 0
+  paused: 0
 --- !u!114 &114957241667145660
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1578324552767114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c1e90453be09b446863443391d3596e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 0}
   sentences:
   - I am the talky dude
   - REAAAAD ME
-  typingSpeed: 0.1
-  continueButton: {fileID: 0}
-  Player: {fileID: 0}
-  MrTalkingDude: {fileID: 0}
-  DialogBoxMenu: {fileID: 0}
+  - TESTTESTESTEETEAWTEAWREAWRAreawrawerewarwaereawrawerewar

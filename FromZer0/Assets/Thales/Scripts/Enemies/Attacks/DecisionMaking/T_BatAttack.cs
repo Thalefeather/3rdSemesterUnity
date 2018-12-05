@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class T_BatAttack : MonoBehaviour {
+    [SerializeField] float timeBetweenAttacks = 2f;
+    [SerializeField] float currentTimeBetweenAttacks = 0f;
+    [SerializeField] GameObject slash;
 
-    public CircleCollider2D body;
-    public float damage = 5;
-    public float timeToAttack=0;
-    public float attackCooldown = 1;
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -19,31 +17,46 @@ public class T_BatAttack : MonoBehaviour {
 		
 	}
 
-//    private void OnCollisionEnter2D(Collision2D collision)
-//    {
-//        Debug.Log("hit");
-//        dealDamage(collision.gameObject);
-//    }
-
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("hit");
-        timeToAttack = timeToAttack - Time.deltaTime;
-
-        if(timeToAttack<=0)
+        if (collision.tag == "Player")
         {
-            dealDamage(collision.gameObject);
-            Debug.Log("hitTime");
-            timeToAttack = attackCooldown;
+            CountDownAndAttack(collision);
         }
     }
 
-    //type => 0 == ranged
-    //type => 1 == melee
-    //type => 2 == special
-    private void dealDamage(GameObject thingHit)
+    private void CountDownAndAttack(Collider2D collision)
     {
-        Debug.Log("damage dealt to Player");
-        thingHit.GetComponent<T_Health>().TakeDamage(damage, 1);
+        currentTimeBetweenAttacks -= Time.deltaTime;
+
+        if (currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= 6.5)
+        {
+            attackColor();
+            Invoke("attack", 0.5f);
+            Invoke("mainColor", 0.5f);
+            currentTimeBetweenAttacks = timeBetweenAttacks;
+        }
+    }
+
+    private void attack()
+    {
+        GameObject attack = Instantiate(slash, this.transform.position + this.transform.up.normalized * 3, this.transform.rotation);
+        currentTimeBetweenAttacks = timeBetweenAttacks;
+    }
+
+    private void print2()
+    {
+        Debug.Log("ATTACK ATTACK ATTACK");
+        currentTimeBetweenAttacks = timeBetweenAttacks;
+    }
+
+    private void mainColor()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+    }
+
+    private void attackColor()
+    {
+        GetComponent<SpriteRenderer>().color = Color.blue;
     }
 }

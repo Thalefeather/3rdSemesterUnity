@@ -7,82 +7,86 @@ public class T_PauseManager : MonoBehaviour {
     [SerializeField] bool isPaused = false;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject tabMenu;
+    [SerializeField] GameObject deadMenu;
     [Space]
     public SimpleHealthBar levelBar;
     public SimpleHealthBar walkingBar;
     public SimpleHealthBar defenseBar;
     public SimpleHealthBar rangedBar;
     public SimpleHealthBar meleeBar;
-    
-  
+
+    GameObject PC;
+
+    [Space]
+    public bool tabPaused = false;
+    public bool paused = false;
+
+
 
     // Use this for initialization
     void Start () {
         Unpause();
         TabUnpause();
-
+        PC = GameObject.Find("Player");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetButtonDown("Cancel") && isPaused == false)
+        if (isPaused)
         {
-            isPaused = true;
-            Pause();
+            PC.GetComponent<T_Player_Inputs>().paused = true;
         }
         else
         {
-            if(Input.GetButtonDown("Cancel"))
-            {
-                isPaused = false;
-                Unpause();
-            }
+            PC.GetComponent<T_Player_Inputs>().paused = false;
         }
-
-        if (Input.GetButtonDown("Tab") && isPaused == false)
-        {
-            Debug.Log("PRESSED TAB AND NOT PAUSED");
-            isPaused = true;
-            TabPause();
-        }
-        else
-        {
-            if (Input.GetButtonDown("Tab"))
-            {
-                Debug.Log("PRESSED TAB AND PAUSED");
-                isPaused = false;
-                TabUnpause();
-            }
-        }
-
-
-
-
     }
 
-    public void Pause()
+    public void Pause()//called on esc press
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        if (isPaused == false)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+            isPaused = true;
+            paused = true;
+        }
+        else if(!tabPaused)
+        {
+            Unpause();
+        }
     }
 
     public void Unpause()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        isPaused = false;
+        paused = false;
     }
 
-    public void TabPause()
+    public void TabPause()//called on tab press
     {
-        updateAllBars();
-        tabMenu.SetActive(true);
-        Time.timeScale = 0; 
+        if (isPaused == false)
+        {
+            updateAllBars();
+            tabMenu.SetActive(true);
+            Time.timeScale = 0;
+            isPaused = true;
+            tabPaused = true;
+        }
+        else if(!paused)
+        {
+            TabUnpause();
+        }
     }
 
     public void TabUnpause()
     {
         tabMenu.SetActive(false);
         Time.timeScale = 1;
+        isPaused = false;
+        tabPaused = false;
     }
 
     void updateAllBars()
@@ -103,8 +107,11 @@ public class T_PauseManager : MonoBehaviour {
 
         Z = PC.GetComponent<T_SkillTracker>().Melee;
         meleeBar.UpdateBar(Z[1], Z[2]);
+    }
 
-
+    public void DeadPause()//called on DEAD
+    {
+        deadMenu.SetActive(!deadMenu.activeInHierarchy);
     }
 
 

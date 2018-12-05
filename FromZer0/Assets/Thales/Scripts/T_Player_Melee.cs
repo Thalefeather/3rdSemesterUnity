@@ -12,19 +12,16 @@ public class T_Player_Melee : MonoBehaviour {
 
     private void Update()
     {
-        attack();
+        //attack();
         attackCounter = attackCounter - Time.deltaTime;
     }
 
-    private void attack()
+    public void attack()
     {
-        if (Input.GetButton("Fire2"))
+        if (attackCounter <= 0)
         {
-            if (attackCounter <= 0)
-            {
-                executeAttack();
-                attackCounter = attackRate;
-            }
+            executeAttack();
+            attackCounter = attackRate;
         }
     }
 

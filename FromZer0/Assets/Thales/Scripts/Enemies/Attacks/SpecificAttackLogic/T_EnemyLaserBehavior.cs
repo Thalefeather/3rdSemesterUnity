@@ -45,10 +45,10 @@ public class T_EnemyLaserBehavior : MonoBehaviour {
             Debug.Log("OnTriggerEnter2D");
         }
 
-        if (collision.tag == "PlayerBody")
+        if (collision.tag == "Player")
         {
             Debug.Log("collided with *BODY*");
-            dealDamage(collision.transform.parent.gameObject);
+            dealDamage(collision.gameObject);
             Destroy(this.gameObject);
         }
 

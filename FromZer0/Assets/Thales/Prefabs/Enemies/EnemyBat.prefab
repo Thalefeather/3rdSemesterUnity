@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4717432666478446}
   - component: {fileID: 212045722512838778}
+  - component: {fileID: 50725965535329520}
   - component: {fileID: 58486996637388136}
   - component: {fileID: 114572059140251950}
   - component: {fileID: 114798157256420752}
-  - component: {fileID: 114194951662322968}
   - component: {fileID: 114410464509623842}
-  - component: {fileID: 50982423825234682}
+  - component: {fileID: 114194951662322968}
   m_Layer: 0
   m_Name: EnemyBat
   m_TagString: Enemy
@@ -69,14 +69,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1081175364645652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.97, y: -10.3, z: 0}
+  m_LocalPosition: {x: -277.0498, y: 89.78296, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4067001507487362}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50982423825234682
+--- !u!50 &50725965535329520
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -150,10 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75922f408bec09c48a4350d54a8e9686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 58092926176866830}
-  damage: 5
-  timeToAttack: 1
-  attackCooldown: 1
+  timeBetweenAttacks: 1
+  currentTimeBetweenAttacks: 0
+  slash: {fileID: 1897931759443852, guid: a1c5f2fab0b13da49994e022ebf546d9, type: 2}
 --- !u!114 &114572059140251950
 MonoBehaviour:
   m_ObjectHideFlags: 1

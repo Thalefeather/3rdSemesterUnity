@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4362830440769172}
   - component: {fileID: 212013994633571714}
+  - component: {fileID: 50524705755619176}
   - component: {fileID: 58239770566558030}
   - component: {fileID: 114607333716824914}
   - component: {fileID: 114713159414895080}
   - component: {fileID: 114778050883171662}
   - component: {fileID: 114371505053527250}
-  - component: {fileID: 50524705755619176}
   m_Layer: 0
   m_Name: EnemyMelee
   m_TagString: Enemy

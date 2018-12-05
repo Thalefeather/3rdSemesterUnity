@@ -39,33 +39,10 @@ public class T_Special_Attacks : MonoBehaviour {
     {
         useCounter += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && isActive==0)
-        {
-            isActive = 1;
-            HealIcon.SetActive(false);
-            LaserIcon.SetActive(true);
-        }
-        else
-        if (Input.GetKeyDown(KeyCode.Alpha1) && isActive == 1)
-        {
-            isActive = 0;
-            HealIcon.SetActive(true);
-            LaserIcon.SetActive(false);
-        }
-
-        if (Input.GetButtonDown("Fire3") && useCounter >= currentCDMax && isActive == 0)
-        {
-            Heal();
-        }
-
-        if (Input.GetButtonDown("Fire3") && useCounter >= currentCDMax && isActive == 1)
-        {
-            Laser();
-        }
-
         CdBar.UpdateBar(useCounter, currentCDMax);
 
     }
+
     void Heal()
     {
         if(checkIfEnoughSP(heal_cost))
@@ -87,7 +64,7 @@ public class T_Special_Attacks : MonoBehaviour {
     {
         if (checkIfEnoughSP(laser_cost))
         {
-            GameObject laser = Instantiate(skillLaserPrefab, transform.position, Quaternion.Euler(0, 0, this.GetComponent<T_Player_Shooting>().angleOfMove())) as GameObject;
+            GameObject laser = Instantiate(skillLaserPrefab, transform.position, this.transform.rotation) as GameObject;
             currentCDMax = laser_cooldown;
             useCounter = 0;
         }
@@ -111,5 +88,40 @@ public class T_Special_Attacks : MonoBehaviour {
             return false;
             //play sound effect of not enough to use skill
         }
+    }
+
+    public void useActiveSkill ()
+    {
+        if (useCounter >= currentCDMax && isActive == 0)
+        {
+            Heal();
+        }
+
+        if (useCounter >= currentCDMax && isActive == 1)
+        {
+            Laser();
+        }
+    }
+
+    public void toggleSwapActiveSkill()
+    {
+        if (isActive == 0)
+        {
+            isActive = 1;
+            HealIcon.SetActive(false);
+            LaserIcon.SetActive(true);
+        }
+        else if (isActive == 1)
+        {
+            isActive = 0;
+            HealIcon.SetActive(true);
+            LaserIcon.SetActive(false);
+        }
+    }
+
+    public void numberSwapActiveSkill(int toSelect)
+    {
+        isActive = toSelect;
+        //still needschange icon to correct skill
     }
 }

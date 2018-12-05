@@ -18,22 +18,19 @@ public class T_Player_Shooting : MonoBehaviour {
 	void Update ()
     {
         shotCounter -= Time.deltaTime;
-        Fire();
+        //fire();
 
         //Debug.Log(angleOfMove());
         //Debug.Log(lastMovedAngle());
         //Debug.Log(Input.GetAxis("Horizontal"));
     }
 
-    private void Fire()
+    public void fire()
     {
-        if(Input.GetButton("Fire1"))
+        if (shotCounter <= 0)
         {
-            if(shotCounter <= 0)
-            {
-                shoot();
-                shotCounter = rateOfFire;
-            }
+            shoot();
+            shotCounter = rateOfFire;
         }
     }
 
@@ -42,7 +39,7 @@ public class T_Player_Shooting : MonoBehaviour {
         //THIS IS THE OLD WAY TO DO IT, IT WORKS
         //GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.Euler(0, 0, angleOfMove())) as GameObject;
 
-        //ATTEMPT AT NEW WAY
+        //ATTEMPT AT NEW WAY (WORKS)
         GameObject laser = Instantiate(laserPrefab, transform.position, this.transform.rotation); //Quaternion.Euler Z rotation is anticlockwise
     }
 

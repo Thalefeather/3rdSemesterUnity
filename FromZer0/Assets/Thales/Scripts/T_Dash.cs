@@ -11,8 +11,10 @@ public class T_Dash : MonoBehaviour {
 
     [Space]
     public float dashCD;
-    private float dashCDCounter = 0;
+    public float dashCDCounter = 0;
     private Rigidbody2D rb;
+    public int rawDashAmount = 2;
+    int currentDashAmount = 0;
 
     // Use this for initialization
     void Start()
@@ -29,13 +31,6 @@ public class T_Dash : MonoBehaviour {
 
     private void Dash()
     {
-        if(Input.GetKeyDown(KeyCode.K) && dashCDCounter <= 0)
-        {
-            rb.velocity = this.gameObject.transform.up.normalized * dashSpeed;
-            dashCDCounter = dashCD;
-            dashingCounter = dashDuration;
-        }
-
         if(dashingCounter <=0)
         {
             rb.velocity = Vector2.zero;
@@ -45,4 +40,32 @@ public class T_Dash : MonoBehaviour {
             dashingCounter = dashingCounter - Time.deltaTime;
         }
     }
+
+    /*public void DoDashOriginal()
+    {
+        if (dashCDCounter <= 0)
+        {
+            rb.velocity = this.gameObject.transform.up.normalized * dashSpeed;
+            dashCDCounter = dashCD;
+            dashingCounter = dashDuration;
+        }
+    }*/
+
+    public void doDash()
+    {
+        if (dashCDCounter <= 0)
+        {
+            currentDashAmount++;
+            rb.velocity = this.gameObject.transform.up.normalized * dashSpeed;
+            dashingCounter = dashDuration;
+
+            if(currentDashAmount >= rawDashAmount)
+            {
+                dashCDCounter = dashCD;
+                currentDashAmount = 0;
+            }
+        }
+    }
+
+
 }

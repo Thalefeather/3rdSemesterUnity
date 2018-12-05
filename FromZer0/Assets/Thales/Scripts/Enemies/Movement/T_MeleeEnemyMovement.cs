@@ -13,7 +13,7 @@ public class T_MeleeEnemyMovement : MonoBehaviour {
             //Debug.Log("DISTANCE" + Vector2.Distance(this.transform.position, collision.gameObject.transform.position));
             if(Vector2.Distance(this.transform.position, collision.gameObject.transform.position) >= 6)
             {
-            transform.position = Vector2.MoveTowards(transform.position, collision.gameObject.transform.position, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, collision.gameObject.transform.position, speed * Time.deltaTime);
             }
         }
     }

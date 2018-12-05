@@ -21,7 +21,18 @@ public class T_BatMovement : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            transform.position = Vector2.MoveTowards(transform.position, collision.gameObject.transform.position, speed * Time.deltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, collision.gameObject.transform.position, speed * Time.deltaTime);
+
+            //this.gameObject.GetComponent<Rigidbody2D>().velocity = this.gameObject.transform.up.normalized * speed;
+
+            if (Vector2.Distance(this.transform.position, collision.gameObject.transform.position) >= 4)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, collision.gameObject.transform.position, speed * Time.deltaTime);
+            }
+        }
+        else
+        {
+            //this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 }

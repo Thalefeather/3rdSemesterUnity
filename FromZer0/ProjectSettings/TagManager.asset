@@ -18,6 +18,7 @@ TagManager:
   - PlayerBody
   - SolidEnviromentObject
   - UnpassableFloor
+  - NPC
   layers:
   - Default
   - TransparentFX

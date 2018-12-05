@@ -5,73 +5,41 @@ using TMPro;
 
 public class Dialog : MonoBehaviour {
 
-    public TextMeshProUGUI textDisplay;
+    T_DialogManager manager;
     public string[] sentences;
-    private int index;
-    public float typingSpeed;
-    public GameObject continueButton;
-    public Collider2D Player;
-    public Collider2D MrTalkingDude;
 
-    [SerializeField] GameObject DialogBoxMenu;
-    
+    //tests for dialogue that can change! have idea on how to implement but not cleanly. leave for now.
+    /*public string[][] DialogueOptions;
+    public int currentDialogueOption;
+    */
 
-    
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start()
+    {
+        manager = GameObject.Find("UIManagers").transform.GetChild(3).GetComponent<T_DialogManager>();
     }
 
     void Update()
     {
-        //activate conversation
-        if (Player.IsTouching(MrTalkingDude))
-        {
-            StartCoroutine(Type());
-            MrTalkingDude.GetComponent<CircleCollider2D>().enabled = false;
-            DialogBoxMenu.SetActive(true);
-        }
-        
-        //jump sentence
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            NextSentence();
-        }
-
-        //set continue button  active
-        if (textDisplay.text == sentences[index])
-        {
-            continueButton.SetActive(true);
-        }
-
-       
     }
 
-    IEnumerator Type()
+    private void OnTriggerEnter2D(Collider2D collision)//if dialog changing is added will have bug where dialog only changes once player leaves hitbox and comesback
     {
-        foreach(char letter in sentences[index].ToCharArray())
+        if(collision.tag == "Player")
         {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            manager.touchingNPC = true;
+            manager.sentences = sentences;
         }
     }
 
-    public void NextSentence()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        continueButton.SetActive(false);
-
-        if (index < sentences.Length - 1)
+        if (collision.tag == "Player")
         {
-            index++;
-            textDisplay.text = "";
-            StartCoroutine(Type());
+            manager.touchingNPC = false;
         }
-        else
-        {
-            textDisplay.text = "";
-            continueButton.SetActive(false);
-            DialogBoxMenu.SetActive(false);
-        }   
-
     }
 
 }

@@ -27,10 +27,10 @@ public class T_MeleeSlash : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "PlayerBody" && hit == false)
+        if (collision.tag == "Player" && hit == false)
         {
             Debug.Log("collided with *BODY*");
-            dealDamage(collision.transform.parent.gameObject);
+            dealDamage(collision.gameObject);
         }
     }
 

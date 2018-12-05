@@ -7,18 +7,24 @@ public class T_Player_Movement : MonoBehaviour {
     [SerializeField] float moveSpeed = 25f;
     [SerializeField] float walkXPcounter = 0;
     private GameObject SwordChild;
+    private Rigidbody2D rb;
+
+    public bool canMove = false;
 
 
 
     // Use this for initialization
     void Start () {
-        //SwordChild = GameObject.Find("Sword");
+        rb = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Move();
-        WalkingLevelUp();
+        if(canMove)
+        {
+            Move();
+            WalkingLevelUp();
+        }
     }
 
     private void Move()
@@ -43,12 +49,15 @@ public class T_Player_Movement : MonoBehaviour {
         //TurnToAngle();
 
 
+
+
         //code to change the players "up" to the direction of movement
         if(inputX!=0 || inputY!=0)
         {
             this.gameObject.transform.up = new Vector2(inputX, inputY).normalized;
         }
 
+        //rb.velocity = new Vector2(deltaX, deltaY);
 
     }
 
