@@ -19786,31 +19786,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114648450478558844, guid: a032dbc0dbb94f840b7648141a144bff,
-        type: 2}
-      propertyPath: PC_CanvasSkillUp
-      value: 
-      objectReference: {fileID: 1558774119}
-    - target: {fileID: 114648450478558844, guid: a032dbc0dbb94f840b7648141a144bff,
-        type: 2}
-      propertyPath: PC_CanvasLevelUp
-      value: 
-      objectReference: {fileID: 13962320}
-    - target: {fileID: 114135780417999636, guid: a032dbc0dbb94f840b7648141a144bff,
-        type: 2}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 392525612}
-    - target: {fileID: 114135780417999636, guid: a032dbc0dbb94f840b7648141a144bff,
-        type: 2}
-      propertyPath: SPBar
-      value: 
-      objectReference: {fileID: 1885563187}
-    - target: {fileID: 114135780417999636, guid: a032dbc0dbb94f840b7648141a144bff,
-        type: 2}
-      propertyPath: pauseManager
-      value: 
-      objectReference: {fileID: 1430051393}
     - target: {fileID: 114804658639086718, guid: a032dbc0dbb94f840b7648141a144bff,
         type: 2}
       propertyPath: HealIcon
@@ -19826,6 +19801,31 @@ Prefab:
       propertyPath: CdBar
       value: 
       objectReference: {fileID: 758438959}
+    - target: {fileID: 114135780417999636, guid: a032dbc0dbb94f840b7648141a144bff,
+        type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 392525612}
+    - target: {fileID: 114135780417999636, guid: a032dbc0dbb94f840b7648141a144bff,
+        type: 2}
+      propertyPath: SPBar
+      value: 
+      objectReference: {fileID: 1885563187}
+    - target: {fileID: 114135780417999636, guid: a032dbc0dbb94f840b7648141a144bff,
+        type: 2}
+      propertyPath: pauseManager
+      value: 
+      objectReference: {fileID: 1430051393}
+    - target: {fileID: 114648450478558844, guid: a032dbc0dbb94f840b7648141a144bff,
+        type: 2}
+      propertyPath: PC_CanvasSkillUp
+      value: 
+      objectReference: {fileID: 1558774119}
+    - target: {fileID: 114648450478558844, guid: a032dbc0dbb94f840b7648141a144bff,
+        type: 2}
+      propertyPath: PC_CanvasLevelUp
+      value: 
+      objectReference: {fileID: 13962320}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a032dbc0dbb94f840b7648141a144bff, type: 2}
   m_IsPrefabAsset: 0

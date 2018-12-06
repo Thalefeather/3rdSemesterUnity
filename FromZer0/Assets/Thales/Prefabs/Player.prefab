@@ -312,12 +312,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338696d384b3bf844bb0d9019bd8ea54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCounter: 0.5
+  attackCounter: 0
   attackRate: 0.5
   attackRange: 2
-  currentComboAttack: 0
-  amountOfTimeToComboIntoNextAttack: 1
-  breakComboStringCounter: 0
+  noOfClicks: 0
+  lastClickedTime: 0
+  maxComboDelay: 0.2
+  spaceBetweenClicks: 0
+  delayCombo1to2: 0.2
+  delayCombo2to3: 0.2
   slash0: {fileID: 1897931759443852, guid: 2f4ffe08c74d5c44d98df64d810b2235, type: 2}
   slash1: {fileID: 1897931759443852, guid: a21ca9fba552058429d178c7f39a2eb6, type: 2}
   slash2: {fileID: 1897931759443852, guid: c66c47c40a7706e4c8d0dc32d4cffee1, type: 2}
@@ -385,6 +388,7 @@ MonoBehaviour:
   dashing: 0
   paused: 0
   touchingNpc: 0
+  inCombo: 0
   talking: 0
   endOfSentence: 0
   dead: 0
