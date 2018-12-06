@@ -108,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1805536427172514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -423.93, y: 94.01, z: 0}
+  m_LocalPosition: {x: -38.98, y: 2.6, z: 0}
   m_LocalScale: {x: 0.19549164, y: 0.19549164, z: 0.19549164}
   m_Children:
   - {fileID: 4544305569312552}
@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  walkXPcounter: 0
-  canMove: 0
+  walkXPcounter: 25.278492
+  canMove: 1
 --- !u!114 &114135780417999636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,7 +284,7 @@ MonoBehaviour:
   dashSpeed: 14
   dashDuration: 0.15
   dashCD: 0.5
-  dashCDCounter: 0
+  dashCDCounter: -10.881305
   rawDashAmount: 2
 --- !u!114 &114274682285616542
 MonoBehaviour:
@@ -312,10 +312,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338696d384b3bf844bb0d9019bd8ea54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCounter: 0
+  attackCounter: 0.5
   attackRate: 0.5
   attackRange: 2
-  slash: {fileID: 1897931759443852, guid: 2f4ffe08c74d5c44d98df64d810b2235, type: 2}
+  currentComboAttack: 0
+  amountOfTimeToComboIntoNextAttack: 1
+  breakComboStringCounter: 0
+  slash0: {fileID: 1897931759443852, guid: 2f4ffe08c74d5c44d98df64d810b2235, type: 2}
+  slash1: {fileID: 1897931759443852, guid: a21ca9fba552058429d178c7f39a2eb6, type: 2}
+  slash2: {fileID: 1897931759443852, guid: c66c47c40a7706e4c8d0dc32d4cffee1, type: 2}
 --- !u!114 &114495631059562670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,6 +384,7 @@ MonoBehaviour:
   moving: 0
   dashing: 0
   paused: 0
+  touchingNpc: 0
   talking: 0
   endOfSentence: 0
   dead: 0
@@ -394,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  useCounter: 0
+  useCounter: 10.881305
   heal_healPerTick: 5
   heal_tickLength: 0.1
   heal_totalTicks: 10
@@ -420,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 50
   rateOfFire: 0.3
-  shotCounter: 0
+  shotCounter: -10.881305
   laserPrefab: {fileID: 1622016870045202, guid: 9359ff8e21ade4a45b4512fde715dbf8,
     type: 2}
   canShoot: 0

@@ -22,6 +22,7 @@ public class T_Player_Inputs : MonoBehaviour {
     public bool dashing = false;
     public bool paused = false;
     public bool touchingNpc = false;
+    public bool inCombo = false;
 
     [Space]
 
@@ -102,7 +103,7 @@ public class T_Player_Inputs : MonoBehaviour {
 
 
         //movement
-        if(talking || paused || dead) //because of pausing timescale = 0 the bool doesnt switch but appears to work as intended anyway
+        if(talking || paused || dead || inCombo) //because of pausing timescale = 0 the bool doesnt switch but appears to work as intended anyway
         {
             pcMovement.canMove = false;
         }
