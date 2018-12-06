@@ -5,6 +5,7 @@ using UnityEngine;
 public class T_BatMovement : MonoBehaviour {
 
     public float speed = 10;
+    public float minimumDistanceToPlayer = 1.5f;
 
     // Use this for initialization
     void Start () {
@@ -25,7 +26,7 @@ public class T_BatMovement : MonoBehaviour {
 
             //this.gameObject.GetComponent<Rigidbody2D>().velocity = this.gameObject.transform.up.normalized * speed;
 
-            if (Vector2.Distance(this.transform.position, collision.gameObject.transform.position) >= 4)
+            if (Vector2.Distance(this.transform.position, collision.gameObject.transform.position) >= minimumDistanceToPlayer)
             {
                 transform.position = Vector2.MoveTowards(transform.position, collision.gameObject.transform.position, speed * Time.deltaTime);
             }

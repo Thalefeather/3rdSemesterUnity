@@ -37,6 +37,15 @@ public class T_DialogManager : MonoBehaviour {
 
     void Update()
     {
+        if(touchingNPC)//set touchingNPC in player input manager to make fire1 contextual talk or attack
+        {
+            PC.GetComponent<T_Player_Inputs>().touchingNpc = true;
+        }
+        else
+        {
+            PC.GetComponent<T_Player_Inputs>().touchingNpc = false;
+        }
+
         //activate conversation
         if (interact && touchingNPC && inConversation == false)
         {

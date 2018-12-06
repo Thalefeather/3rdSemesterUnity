@@ -21,6 +21,7 @@ public class T_Player_Inputs : MonoBehaviour {
     public bool moving = false;
     public bool dashing = false;
     public bool paused = false;
+    public bool touchingNpc = false;
 
     [Space]
 
@@ -56,38 +57,47 @@ public class T_Player_Inputs : MonoBehaviour {
     void Update()
     {
 
-        if (!talking && !paused && !dead)
+        if (!paused && !dead)
         {
-            //melee Attack
-            if (Input.GetButtonDown("Fire2"))
+            //melee Attack and talk to npcs
+            if (Input.GetButtonDown("Fire1"))
             {
-                pcMelee.attack();
+                if(!touchingNpc)
+                {
+                    pcMelee.attack();
+                }
+                else
+                {
+                    uiDialog.interact = true;
+                }            
             }
 
-            //ranged Attack
-            if (Input.GetButton("Fire1"))
+            if (!talking)
             {
-                pcRanged.fire();
-            }
+                //ranged Attack
+                if (Input.GetButton("Fire2"))
+                {
+                    pcRanged.fire();
+                }
 
-            //use special
-            if (Input.GetButtonDown("Fire3"))
-            {
-                pcSpecial.useActiveSkill();
-            }
+                //use special
+                if (Input.GetButtonDown("Fire3"))
+                {
+                    pcSpecial.useActiveSkill();
+                }
 
-            //toggle swap active skill
-            if (Input.GetButtonDown("Toggle Power"))
-            {
-                pcSpecial.toggleSwapActiveSkill();
-            }
+                //toggle swap active skill
+                if (Input.GetButtonDown("Toggle Power"))
+                {
+                    pcSpecial.toggleSwapActiveSkill();
+                }
 
-            //dash
-            if (Input.GetButtonDown("Dash"))
-            {
-                pcDash.doDash();
+                //dash
+                if (Input.GetButtonDown("Dash"))
+                {
+                    pcDash.doDash();
+                }
             }
-
         }
 
 
@@ -118,10 +128,10 @@ public class T_Player_Inputs : MonoBehaviour {
             uiMenu.TabUnpause();
         }
 
-        if (Input.GetButton("Interact") && !paused && !dead)
+        /*if (Input.GetButtonDown("Interact") && !paused && !dead)
         {
             uiDialog.interact = true;
-        }
+        }*/
 
 
     }

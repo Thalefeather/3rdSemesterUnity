@@ -5,6 +5,9 @@ using UnityEngine;
 public class T_BatAttack : MonoBehaviour {
     [SerializeField] float timeBetweenAttacks = 2f;
     [SerializeField] float currentTimeBetweenAttacks = 0f;
+    [SerializeField] float attackRange = 1f;
+
+    [Space]
     [SerializeField] GameObject slash;
 
     // Use this for initialization
@@ -29,7 +32,7 @@ public class T_BatAttack : MonoBehaviour {
     {
         currentTimeBetweenAttacks -= Time.deltaTime;
 
-        if (currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= 6.5)
+        if (currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= this.gameObject.GetComponent<T_BatMovement>().minimumDistanceToPlayer)
         {
             attackColor();
             Invoke("attack", 0.5f);
@@ -40,7 +43,7 @@ public class T_BatAttack : MonoBehaviour {
 
     private void attack()
     {
-        GameObject attack = Instantiate(slash, this.transform.position + this.transform.up.normalized * 3, this.transform.rotation);
+        GameObject attack = Instantiate(slash, this.transform.position + this.transform.up.normalized/attackRange, this.transform.rotation);
         currentTimeBetweenAttacks = timeBetweenAttacks;
     }
 

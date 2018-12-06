@@ -56,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178670861145692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -290.4, y: 47.4, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: -417.96, y: 83.4, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 4699910237769424}
   m_Father: {fileID: 0}
@@ -137,8 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae42e12ba65845e42be5ff1eaa22d7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 1.3
   currentTimeBetweenAttacks: 0
+  attackRange: 1.5
   slash: {fileID: 1897931759443852, guid: bdadf5afb18c59c468d8bc628cb732cf, type: 2}
 --- !u!114 &114607333716824914
 MonoBehaviour:
@@ -159,6 +160,7 @@ MonoBehaviour:
   maxSP: 0
   currentSP: 0
   SPBar: {fileID: 0}
+  pauseManager: {fileID: 0}
 --- !u!114 &114713159414895080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,7 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dbc37557131954289bfc461ff06261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 2.8
+  minimumDistanceToPlayer: 1.3
 --- !u!212 &212013994633571714
 SpriteRenderer:
   m_ObjectHideFlags: 1

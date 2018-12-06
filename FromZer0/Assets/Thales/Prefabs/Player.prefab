@@ -57,14 +57,14 @@ GameObject:
   - component: {fileID: 212803652668060348}
   - component: {fileID: 50900499450605322}
   - component: {fileID: 58226760553776126}
-  - component: {fileID: 114135780417999636}
-  - component: {fileID: 114990912625664048}
-  - component: {fileID: 114098794407032450}
-  - component: {fileID: 114648450478558844}
-  - component: {fileID: 114804658639086718}
-  - component: {fileID: 114154826809745804}
-  - component: {fileID: 114372462119865104}
   - component: {fileID: 114684353780750956}
+  - component: {fileID: 114135780417999636}
+  - component: {fileID: 114648450478558844}
+  - component: {fileID: 114098794407032450}
+  - component: {fileID: 114154826809745804}
+  - component: {fileID: 114804658639086718}
+  - component: {fileID: 114990912625664048}
+  - component: {fileID: 114372462119865104}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -87,7 +87,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4234947933431566
 Transform:
   m_ObjectHideFlags: 1
@@ -108,8 +108,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1805536427172514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -324, y: 96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -423.93, y: 94.01, z: 0}
+  m_LocalScale: {x: 0.19549164, y: 0.19549164, z: 0.19549164}
   m_Children:
   - {fileID: 4544305569312552}
   - {fileID: 4234947933431566}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9319822f5203040aa26e30858f50d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 25
+  moveSpeed: 7
   walkXPcounter: 0
   canMove: 0
 --- !u!114 &114135780417999636
@@ -269,6 +269,7 @@ MonoBehaviour:
   maxSP: 100
   currentSP: 0
   SPBar: {fileID: 0}
+  pauseManager: {fileID: 0}
 --- !u!114 &114154826809745804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7cb9b73419f264fa7197b9ff4d2d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 50
+  dashSpeed: 14
   dashDuration: 0.15
   dashCD: 0.5
   dashCDCounter: 0
@@ -313,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCounter: 0
   attackRate: 0.5
+  attackRange: 2
   slash: {fileID: 1897931759443852, guid: 2f4ffe08c74d5c44d98df64d810b2235, type: 2}
 --- !u!114 &114495631059562670
 MonoBehaviour:
@@ -379,6 +381,7 @@ MonoBehaviour:
   paused: 0
   talking: 0
   endOfSentence: 0
+  dead: 0
 --- !u!114 &114804658639086718
 MonoBehaviour:
   m_ObjectHideFlags: 1

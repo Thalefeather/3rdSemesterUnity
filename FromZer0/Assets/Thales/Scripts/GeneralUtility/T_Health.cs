@@ -25,15 +25,18 @@ public class T_Health : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (this.gameObject.tag == "Player")
+        if (this.gameObject.tag == "Player")//for players
         {
             SPBar.UpdateBar(currentSP, maxSP);
             rb = GetComponent<Rigidbody2D>();
+            this.GetComponent<T_Player_Inputs>().dead = false;
         }
-        else
+        else//for enemies
         {
             PC = GameObject.Find("Player");
+            
         }
+        
     }
 	
     private void CheckIfDeadThenKill ()
@@ -46,10 +49,11 @@ public class T_Health : MonoBehaviour {
                 TallyCurrency(CurrencyWorth);
                 Destroy(this.gameObject);
             }
-            else if(this.gameObject.tag == "Player" && !dead)
+            else if(this.gameObject.tag == "Player" && !dead)//if its the player and he aint dead yet
             {
                 pauseManager.GetComponent<T_PauseManager>().DeadPause();
                 dead = true;
+                this.GetComponent<T_Player_Inputs>().dead = true;
             }
 
             

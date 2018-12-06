@@ -288,6 +288,7 @@ MonoBehaviour:
   isPaused: 0
   pauseMenu: {fileID: 0}
   tabMenu: {fileID: 0}
+  deadMenu: {fileID: 0}
   levelBar: {fileID: 0}
   walkingBar: {fileID: 0}
   defenseBar: {fileID: 0}

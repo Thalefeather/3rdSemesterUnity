@@ -8,6 +8,7 @@ public class T_MeleeAttack : MonoBehaviour {
 
     [SerializeField] float timeBetweenAttacks = 2f;
     [SerializeField] float currentTimeBetweenAttacks = 0f;
+    [SerializeField] float attackRange = 2f;
     [SerializeField] GameObject slash;
 
 
@@ -23,7 +24,7 @@ public class T_MeleeAttack : MonoBehaviour {
     {
         currentTimeBetweenAttacks -= Time.deltaTime;
 
-        if(currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= 6.5)
+        if(currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= this.GetComponent<T_MeleeEnemyMovement>().minimumDistanceToPlayer)
         {
             attackColor();
             Invoke("attack", 0.5f);
@@ -34,7 +35,7 @@ public class T_MeleeAttack : MonoBehaviour {
 
     private void attack()
     {
-        GameObject attack = Instantiate(slash, this.transform.position + this.transform.up.normalized * 3, this.transform.rotation);
+        GameObject attack = Instantiate(slash, this.transform.position + this.transform.up.normalized/attackRange, this.transform.rotation);
         currentTimeBetweenAttacks = timeBetweenAttacks;
     }
 

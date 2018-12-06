@@ -7,6 +7,8 @@ public class T_Player_Melee : MonoBehaviour {
 
     [SerializeField] float attackCounter = 0;
     [SerializeField] float attackRate = 0.5f;
+    [SerializeField] float attackRange = 2f;
+    [SerializeField] float currentComboAttack = 0;
     [Space]
     [SerializeField] GameObject slash;
 
@@ -27,6 +29,6 @@ public class T_Player_Melee : MonoBehaviour {
 
     private void executeAttack()
     {
-        GameObject attackObject = Instantiate(slash, this.transform.position + this.transform.up.normalized * 3, this.transform.rotation);
+        GameObject attackObject = Instantiate(slash, this.transform.position + this.transform.up.normalized/attackRange, this.transform.rotation);
     }
 }
