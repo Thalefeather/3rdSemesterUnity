@@ -6,7 +6,7 @@ public class T_Dash : MonoBehaviour {
 
     
     public float dashSpeed;
-    private float dashingCounter = 0;
+    public float dashingCounter = 0;
     public float dashDuration = 0.1f;
 
     [Space]
@@ -14,7 +14,10 @@ public class T_Dash : MonoBehaviour {
     public float dashCDCounter = 0;
     private Rigidbody2D rb;
     public int rawDashAmount = 2;
-    int currentDashAmount = 0;
+    public int currentDashAmount = 0;
+
+    [Space]
+    public bool isDashing = false;
 
     // Use this for initialization
     void Start()
@@ -24,21 +27,17 @@ public class T_Dash : MonoBehaviour {
 
     private void Update()
     {
-        Dash();
-
-        dashCDCounter = dashCDCounter - Time.deltaTime;
-    }
-
-    private void Dash()
-    {
-        if(dashingCounter <=0)
+        if (dashingCounter <= 0)
         {
             rb.velocity = Vector2.zero;
+            isDashing = false;
         }
         else
         {
             dashingCounter = dashingCounter - Time.deltaTime;
         }
+
+        dashCDCounter = dashCDCounter - Time.deltaTime;
     }
 
     /*public void DoDashOriginal()
@@ -55,6 +54,7 @@ public class T_Dash : MonoBehaviour {
     {
         if (dashCDCounter <= 0)
         {
+            isDashing = true;
             currentDashAmount++;
             rb.velocity = this.gameObject.transform.up.normalized * dashSpeed;
             dashingCounter = dashDuration;

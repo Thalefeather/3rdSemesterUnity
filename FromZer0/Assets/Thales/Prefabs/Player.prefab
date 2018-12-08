@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9319822f5203040aa26e30858f50d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
-  walkXPcounter: 25.278492
+  moveSpeed: 300
+  walkXPcounter: 0
   canMove: 1
 --- !u!114 &114135780417999636
 MonoBehaviour:
@@ -282,10 +282,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 14
+  dashingCounter: 0
   dashDuration: 0.15
   dashCD: 0.5
-  dashCDCounter: -10.881305
+  dashCDCounter: -251.01505
   rawDashAmount: 2
+  currentDashAmount: 0
 --- !u!114 &114274682285616542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,13 +314,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338696d384b3bf844bb0d9019bd8ea54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCounter: 0
+  attackCounter: -198.32306
   attackRate: 0.5
   attackRange: 2
   noOfClicks: 0
-  lastClickedTime: 0
+  lastClickedTime: 43.078423
   maxComboDelay: 0.2
-  spaceBetweenClicks: 0
+  spaceBetweenClicks: 0.1982727
   delayCombo1to2: 0.2
   delayCombo2to3: 0.2
   slash0: {fileID: 1897931759443852, guid: 2f4ffe08c74d5c44d98df64d810b2235, type: 2}
@@ -356,7 +358,7 @@ MonoBehaviour:
   - 100
   Walking:
   - 1
-  - 0
+  - 30
   - 100
   Ranged:
   - 1
@@ -404,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  useCounter: 10.881305
+  useCounter: 251.01505
   heal_healPerTick: 5
   heal_tickLength: 0.1
   heal_totalTicks: 10
@@ -430,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 50
   rateOfFire: 0.3
-  shotCounter: -10.881305
+  shotCounter: -251.01505
   laserPrefab: {fileID: 1622016870045202, guid: 9359ff8e21ade4a45b4512fde715dbf8,
     type: 2}
   canShoot: 0

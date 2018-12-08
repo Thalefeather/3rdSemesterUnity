@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using Kryz.CharacterStats;
+using fz.CharacterStats;
+
 
 public class Character : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class Character : MonoBehaviour
 
     [SerializeField] PInventory inventory;
     [SerializeField] EquipmentPanel equipmentPanel;
-
-   
-
- 
+    [SerializeField] StatPanel StatPanel;
 
     private void Awake()
     {
+        StatPanel.SetStats(Melee, Defense, Ranged);
+        StatPanel.UpdateStatValues();
+
         inventory.OnItemRightClickedEvent += EquipFromInventory;
         equipmentPanel.OnItemRightClickedEvent += UnequipFromEquipPanel;
     }
@@ -47,8 +48,11 @@ public class Character : MonoBehaviour
                 if(previousItem != null)
                 {
                     inventory.AddItem(previousItem);
+                    previousItem.Unequip(this);
+                    StatPanel.UpdateStatValues();
                 }
-
+                item.Equip(this);
+                StatPanel.UpdateStatValues();
             }
             else
             {
@@ -61,6 +65,8 @@ public class Character : MonoBehaviour
     {
         if(!inventory.IsFull() && equipmentPanel.RemoveItem(item))
         {
+            item.Unequip(this);
+            StatPanel.UpdateStatValues();
             inventory.AddItem(item);
         }
     }

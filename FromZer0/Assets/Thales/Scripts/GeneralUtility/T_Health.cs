@@ -68,7 +68,7 @@ public class T_Health : MonoBehaviour {
         if (this.gameObject.tag == "Player")
         {
             Debug.Log("velocity while taking damge: "+rb.velocity.x + " " +rb.velocity.y);
-            if (rb.velocity.x == 0 && rb.velocity.y == 0)
+            if (!this.GetComponent<T_Dash>().isDashing)
             { 
                 currentHealth = currentHealth - this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg);
                 Debug.Log(this.gameObject.GetComponent<T_SkillTracker>().defenseModifier(dmg));

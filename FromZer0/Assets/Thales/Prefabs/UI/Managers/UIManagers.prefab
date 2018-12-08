@@ -206,8 +206,8 @@ MonoBehaviour:
   DialogBoxMenu: {fileID: 0}
   conversastionAvailableIcon: {fileID: 0}
   sentences:
-  - this is a test this is a test
-  - 2 2 2 2 2 2 2 2 2 2 2 2
+  - This is my house
+  - I dont own any furniture...
   typingSpeed: 0.1
   endOfSentence: 0
   speedUpTyping: 0
