@@ -26,10 +26,9 @@ public class EquippableItem : Item
     public float RangePercentBonus;
     public float DefensePercentBonus;
     [Space]
-    public bool Heal;
-    public bool Laser;
-    public int Cooldown1;
-    public int Cooldown2;
+    public bool Heal = false;
+    public bool Laser = false;
+    public int Cooldown = 0;
     [Space]
     public EquipmentType EquipmentType;
 

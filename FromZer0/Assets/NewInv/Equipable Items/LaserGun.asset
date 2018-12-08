@@ -9,17 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb5fa2a360812bd4c87c7bfb4d05bdfa, type: 3}
-  m_Name: Skill_Heal
+  m_Name: LaserGun
   m_EditorClassIdentifier: 
-  ItemName: Heal
-  Icon: {fileID: 21300000, guid: b7b8caf31282304468d962f5bed65e86, type: 3}
+  ItemName: G U N
+  Icon: {fileID: 21300000, guid: 3193d83389192e04782b938881780dda, type: 3}
   MeleeBonus: 0
-  RangeBonus: 0
+  RangeBonus: 200
   DefenseBonus: 0
   MeleePercentBonus: 0
   RangePercentBonus: 0
   DefensePercentBonus: 0
-  Heal: 1
+  Heal: 0
   Laser: 0
-  Cooldown: 10
-  EquipmentType: 8
+  Cooldown: 0
+  EquipmentType: 5

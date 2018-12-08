@@ -11,6 +11,22 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1805536427172514}
   m_IsPrefabAsset: 1
+--- !u!1 &1360365377696564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4168216037377522}
+  - component: {fileID: 212541080267270240}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1398807562391650
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +81,7 @@ GameObject:
   - component: {fileID: 114804658639086718}
   - component: {fileID: 114990912625664048}
   - component: {fileID: 114372462119865104}
+  - component: {fileID: 114744748906092652}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -88,6 +105,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!4 &4168216037377522
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360365377696564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0}
+  m_LocalScale: {x: 2, y: 0.75, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4273174562562448}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4234947933431566
 Transform:
   m_ObjectHideFlags: 1
@@ -114,6 +144,7 @@ Transform:
   - {fileID: 4544305569312552}
   - {fileID: 4234947933431566}
   - {fileID: 4356622315590880}
+  - {fileID: 4168216037377522}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -288,6 +319,7 @@ MonoBehaviour:
   dashCDCounter: -251.01505
   rawDashAmount: 2
   currentDashAmount: 0
+  isDashing: 0
 --- !u!114 &114274682285616542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,6 +406,7 @@ MonoBehaviour:
   - 100
   defenseGear: 0
   meleeGear: 0
+  rangedGear: 0
 --- !u!114 &114684353780750956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,6 +427,26 @@ MonoBehaviour:
   talking: 0
   endOfSentence: 0
   dead: 0
+--- !u!114 &114744748906092652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805536427172514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b72c5f1ca535243b1ca420c3ffb6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Melee:
+    BaseValue: 0
+  Ranged:
+    BaseValue: 0
+  Defense:
+    BaseValue: 0
+  inventory: {fileID: 0}
+  equipmentPanel: {fileID: 0}
+  StatPanel: {fileID: 0}
 --- !u!114 &114804658639086718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,6 +489,52 @@ MonoBehaviour:
   laserPrefab: {fileID: 1622016870045202, guid: 9359ff8e21ade4a45b4512fde715dbf8,
     type: 2}
   canShoot: 0
+--- !u!212 &212541080267270240
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360365377696564}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e491dfa10d6e7cf47a04ecf3a523c40d, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!212 &212803652668060348
 SpriteRenderer:
   m_ObjectHideFlags: 1

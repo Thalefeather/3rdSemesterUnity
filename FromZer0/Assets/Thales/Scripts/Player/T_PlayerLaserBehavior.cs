@@ -46,8 +46,8 @@ public class T_PlayerLaserBehavior : MonoBehaviour {
     {
         PC = GameObject.Find("Player");
         Debug.Log("damage dealt to enemy");
-        
-        finalDamage = rawDamage + PC.GetComponent<T_SkillTracker>().Ranged[0];
+
+        finalDamage = PC.gameObject.GetComponent<T_SkillTracker>().rangedModifier(rawDamage);
         thingHit.GetComponent<T_Health>().TakeDamage(finalDamage, 0);
         Debug.Log(finalDamage);
         //Make sure method is set to public! this is example of how to call function from another object

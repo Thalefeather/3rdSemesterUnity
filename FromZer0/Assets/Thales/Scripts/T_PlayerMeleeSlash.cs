@@ -22,7 +22,7 @@ public class T_PlayerMeleeSlash : MonoBehaviour {
     //type => 2 == special
     private void dealDamage(GameObject thingHit)
     {
-        finalDamage = damage + PC.GetComponent<T_SkillTracker>().Melee[0] + PC.GetComponent<T_SkillTracker>().meleeGear;
+        finalDamage = PC.gameObject.GetComponent<T_SkillTracker>().meleeModifier(damage);
         Debug.Log(finalDamage+" MELEE damage dealt to Enemy");
         thingHit.GetComponent<T_Health>().TakeDamage(finalDamage, 1);
     }

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToFade: 0.1
-  damage: 10
+  damage: 2
 --- !u!212 &212131761110715082
 SpriteRenderer:
   m_ObjectHideFlags: 1

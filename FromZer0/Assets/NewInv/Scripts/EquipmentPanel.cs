@@ -33,13 +33,18 @@ public class EquipmentPanel : MonoBehaviour
                 previousItem = (EquippableItem)EquipmentSlots[i].Item;
                 EquipmentSlots[i].Item = item;
 
+                //My shitty way of handling inventory to character connection
                 if(item.DefenseBonus > 0)
                 {
-                    PC.gameObject.GetComponent<T_SkillTracker>().defenseGear = item.DefenseBonus;
+                    PC.gameObject.GetComponent<T_SkillTracker>().defenseGear += item.DefenseBonus;
                 }
                 if(item.MeleeBonus > 0)
                 {
-                    PC.gameObject.GetComponent<T_SkillTracker>().meleeGear = item.MeleeBonus;
+                    PC.gameObject.GetComponent<T_SkillTracker>().meleeGear += item.MeleeBonus;
+                }
+                if (item.RangeBonus > 0)
+                {
+                    PC.gameObject.GetComponent<T_SkillTracker>().rangedGear += item.RangeBonus;
                 }
                 return true;
             }
@@ -54,6 +59,7 @@ public class EquipmentPanel : MonoBehaviour
         {
             if (EquipmentSlots[i].Item == item)
             {
+                //My shitty way of handling inventory to character connection
                 if (item.DefenseBonus > 0)
                 {
                     PC.gameObject.GetComponent<T_SkillTracker>().defenseGear -= item.DefenseBonus;
@@ -61,6 +67,10 @@ public class EquipmentPanel : MonoBehaviour
                 if (item.MeleeBonus > 0)
                 {
                     PC.gameObject.GetComponent<T_SkillTracker>().meleeGear -= item.MeleeBonus;
+                }
+                if (item.RangeBonus > 0)
+                {
+                    PC.gameObject.GetComponent<T_SkillTracker>().rangedGear -= item.RangeBonus;
                 }
 
                 EquipmentSlots[i].Item = null;

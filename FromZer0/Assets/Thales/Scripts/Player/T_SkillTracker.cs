@@ -19,6 +19,7 @@ public class T_SkillTracker : MonoBehaviour {
 
     public float defenseGear=0;
     public float meleeGear=0;
+    public float rangedGear = 0;
 
 
 
@@ -51,6 +52,8 @@ public class T_SkillTracker : MonoBehaviour {
 
             if(Playerlevel)
             {
+                this.gameObject.GetComponent<T_Health>().maxHealth += 10;
+                this.gameObject.GetComponent<T_Health>().Heal(10);
                 levelUpOn();
             }
             else
@@ -75,6 +78,29 @@ public class T_SkillTracker : MonoBehaviour {
         float final;
 
         final = damage*(100 / (100 + lvl + defenseGear));
+
+        return final;
+    }
+
+    public float rangedModifier(float damage)
+    {
+        float lvl = Ranged[0];
+
+        float final;
+
+        final = damage + lvl + rangedGear;
+
+        return final;
+    }
+
+    public float meleeModifier(float damage)
+    {
+        float lvl = Melee[0];
+
+        float final;
+
+        final = damage * (lvl + meleeGear + 4);
+        
 
         return final;
     }
