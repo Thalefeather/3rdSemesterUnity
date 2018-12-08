@@ -4,14 +4,20 @@ using UnityEngine;
 using TMPro;
 
 public class Dialog : MonoBehaviour {
+    [System.Serializable]
+    public class MultiDimensionalString
+    {
+        public string[] Sentences;
+    }
 
     T_DialogManager manager;
-    public string[] sentences;
+    public int index = 0;
+    public MultiDimensionalString[] Dialogue;
 
-    //tests for dialogue that can change! have idea on how to implement but not cleanly. leave for now.
-    /*public string[][] DialogueOptions;
-    public int currentDialogueOption;
-    */
+
+
+   
+
 
 
 
@@ -30,7 +36,7 @@ public class Dialog : MonoBehaviour {
         if(collision.tag == "Player")
         {
             manager.touchingNPC = true;
-            manager.sentences = sentences;
+            manager.sentences = Dialogue[index].Sentences;
         }
     }
 
@@ -38,8 +44,13 @@ public class Dialog : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            manager.touchingNPC = false;
+            manager.touchingNPC = false; 
         }
+    }
+
+    public void changeDialogueIndexTo (int value)
+    {
+        index = value;
     }
 
 }

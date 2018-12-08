@@ -45,6 +45,20 @@ public class PInventory : MonoBehaviour
         }
     }
 
+    public bool CheckIfItemIsInInventory(Item item)
+    {
+        int i = 0;
+        bool found = false;
+        for (; i < items.Count; i++)
+        {
+            if(items[i] == item)
+            {
+                found = true;
+            }
+        }
+        return found;
+    }
+
     public bool AddItem(Item item)
     {
         if (IsFull())

@@ -134,8 +134,10 @@ public class T_Health : MonoBehaviour {
     private void TallyCurrency(float amount)
     {
         GameObject PC_Inventory = GameObject.Find("TInventory");
+        GameObject ScrapUI = GameObject.Find("EarnedScrapRepresentationManager");
 
         PC_Inventory.GetComponent<T_CurrencyManager>().earnCurrency(amount);
+        ScrapUI.GetComponent<T_EarnedScrapCanvas>().setValue(amount);
     }
 
     private void EarnSP (float amount)

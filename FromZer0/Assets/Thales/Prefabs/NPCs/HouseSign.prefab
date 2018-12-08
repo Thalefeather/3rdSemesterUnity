@@ -89,9 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1e90453be09b446863443391d3596e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentences:
-  - This is my house
-  - I dont own any furniture...
+  index: 0
+  Dialogue:
+  - Sentences:
+    - This is my house
+    - I dont own any furniture...
 --- !u!212 &212888275505292214
 SpriteRenderer:
   m_ObjectHideFlags: 1

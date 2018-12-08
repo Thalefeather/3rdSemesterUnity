@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4168216037377522}
   - component: {fileID: 212541080267270240}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FowardFacingThing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

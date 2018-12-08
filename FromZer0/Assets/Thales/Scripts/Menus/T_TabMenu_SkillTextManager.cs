@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class T_TabMenu_SkillTextManager : MonoBehaviour {
 
+    [SerializeField] GameObject Pages;
+
+    [Space]
+
     [SerializeField] Text PlayerLevel;
     [SerializeField] Text ScrapAmount;
     [SerializeField] Text HP;
@@ -22,6 +26,7 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Z = GameObject.Find("Player");
+        ChangeToPanel(0);
     }
 	
 	// Update is called once per frame
@@ -57,5 +62,19 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
 
         var Melee = Z.GetComponent<T_SkillTracker>().Melee;
         MeleeLevel.text = Melee[0].ToString();
+    }
+
+    public void ChangeToPanel(int panel)
+    {
+        if (panel == 0)
+        {
+            Pages.transform.GetChild(0).gameObject.SetActive(true);
+            Pages.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        if (panel == 1)
+        {
+            Pages.transform.GetChild(0).gameObject.SetActive(false);
+            Pages.transform.GetChild(1).gameObject.SetActive(true);
+        }
     }
 }
