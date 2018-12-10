@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class T_Player_Movement : MonoBehaviour {
 
+    public FixedJoystick joystick;
     [SerializeField] float moveSpeed = 25f;
     [SerializeField] float walkXPcounter = 0;
     private Rigidbody2D rb;
@@ -33,23 +34,13 @@ public class T_Player_Movement : MonoBehaviour {
 
     private void Move()
     {
-        float deltaX;
-        float deltaY;
-
+#if UNITY_ANDROID
+        float inputX = joystick.Horizontal;
+        float inputY = joystick.Vertical;
+#else
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
-
-        /*float newXpos;
-        float newYpos;
-
-        deltaX = inputX * Time.deltaTime * moveSpeed;
-        deltaY = inputY * Time.deltaTime * moveSpeed;
-
-        newXpos = transform.position.x + deltaX;
-        newYpos = transform.position.y + deltaY;
-
-        transform.position = new Vector2(newXpos, newYpos);
-        */
+#endif
 
         rb.velocity = new Vector2(inputX * moveSpeed * Time.deltaTime, inputY * moveSpeed * Time.deltaTime);
 
@@ -58,8 +49,6 @@ public class T_Player_Movement : MonoBehaviour {
         {
             this.gameObject.transform.up = new Vector2(inputX, inputY).normalized;
         }
-
-        //rb.velocity = new Vector2(deltaX, deltaY);
 
     }
 
@@ -75,6 +64,4 @@ public class T_Player_Movement : MonoBehaviour {
             this.GetComponent<T_SkillTracker>().EarnXp(array, 10, false);
         }
     }
-
-
 }

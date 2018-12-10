@@ -33,6 +33,14 @@ public class T_Player_Inputs : MonoBehaviour {
 
     public bool dead = false;
 
+    [Space]
+    public bool AisPressed = false;
+    public bool BisPressed = false;
+    public bool XisPressed = false;
+    public bool YisPressed = false;
+    public bool IisPressed = false;
+    public bool StartisPressed = false;
+
 
     // Use this for initialization
     void Start () {
@@ -58,6 +66,93 @@ public class T_Player_Inputs : MonoBehaviour {
     void Update()
     {
 
+#if UNITY_ANDROID
+        if (!paused && !dead)
+        {
+            //melee Attack and talk to npcs
+            if (AisPressed)
+            {
+                if (!touchingNpc)
+                {
+                    pcMelee.attack();
+                }
+                else
+                {
+                    uiDialog.interact = true;
+                }
+
+                AisPressed = false;
+            }
+
+            if (!talking)
+            {
+                //ranged Attack
+                if (XisPressed)
+                {
+                    pcRanged.fire();
+                    XisPressed = false;
+                }
+
+                //use special
+                if (YisPressed)
+                {
+                    pcSpecial.useActiveSkill();
+                    YisPressed = false;
+                }
+
+                //toggle swap active skill
+                if (Input.GetButtonDown("Toggle Power"))
+                {
+                    pcSpecial.toggleSwapActiveSkill();
+                }
+
+                //dash
+                if (BisPressed)
+                {
+                    pcDash.doDash();
+                    BisPressed = false;
+                }
+            }
+        }
+
+
+        //movement
+        if (talking || paused || dead || inCombo) //because of pausing timescale = 0 the bool doesnt switch but appears to work as intended anyway
+        {
+            pcMovement.canMove = false;
+        }
+        else
+        {
+            pcMovement.canMove = true;
+        }
+
+        //pause
+        if (StartisPressed)
+        {
+            uiMenu.Pause();
+            StartisPressed = false;
+        }
+
+        if (IisPressed && !talking)
+        {
+            uiMenu.TabPause();
+            IisPressed = false;
+        }
+
+        if (StartisPressed && paused)//if "Cancel" in any menu, unpause and leave all menus
+        {
+            uiMenu.Unpause();
+            uiMenu.TabUnpause();
+            StartisPressed = false;
+        }
+
+        /*if (Input.GetButtonDown("Interact") && !paused && !dead)
+        {
+            uiDialog.interact = true;
+        }*/
+
+
+#else
         if (!paused && !dead)
         {
             //melee Attack and talk to npcs
@@ -135,6 +230,37 @@ public class T_Player_Inputs : MonoBehaviour {
         }*/
 
 
+#endif
+    }
+
+    public void AButton()
+    {
+        AisPressed = true;
+    }
+
+    public void BButton()
+    {
+        BisPressed = true;
+    }
+
+    public void YButton()
+    {
+        YisPressed = true;
+    }
+
+    public void XButton()
+    {
+        XisPressed = true;
+    }
+
+    public void IButton()
+    {
+        IisPressed = true;
+    }
+
+    public void StartButton()
+    {
+        StartisPressed = true;
     }
 
 

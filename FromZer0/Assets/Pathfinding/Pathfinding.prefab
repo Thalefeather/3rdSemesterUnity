@@ -55,9 +55,6 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 256
-  unwalkableMask2:
-    serializedVersion: 2
-    m_Bits: 256
   worldSize: {x: 18, y: 10}
   nodeRadius: 0.2
 --- !u!114 &114458617881385884

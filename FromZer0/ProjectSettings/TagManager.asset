@@ -19,6 +19,8 @@ TagManager:
   - SolidEnviromentObject
   - UnpassableFloor
   - NPC
+  - Item
+  - Pickup
   layers:
   - Default
   - TransparentFX
