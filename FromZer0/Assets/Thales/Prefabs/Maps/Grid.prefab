@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 2113883506824014700}
   - component: {fileID: 50062426165311572}
   - component: {fileID: 66670854039422408}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Walls
   m_TagString: SolidEnviromentObject
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 2113883504562175722}
   - component: {fileID: 50624263227001072}
   - component: {fileID: 66003265893923900}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: UnpassableFloor
   m_TagString: UnpassableFloor
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347063678284664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 410.86, y: -96.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4170819808776822}
@@ -214,7 +214,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 1
+  m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:

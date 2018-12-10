@@ -20,9 +20,6 @@ public class T_CurrencyManager : MonoBehaviour {
     {
         currentAmount = currentAmount + amount;
 
-        GameObject ScrapUI = GameObject.Find("EarnedScrapRepresentationManager");
-        ScrapUI.GetComponent<T_EarnedScrapCanvas>().setValue(amount);
-
         Debug.Log("Earned " + amount+" Scrap");
     }
     

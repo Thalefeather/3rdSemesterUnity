@@ -65,7 +65,6 @@ public class PInventory : MonoBehaviour
             return false;
 
         items.Add(item);
-        Debug.Log("ADDED ITEM TO INVENTORY: " + item.name);
         RefreshUI();
         return true;
     }

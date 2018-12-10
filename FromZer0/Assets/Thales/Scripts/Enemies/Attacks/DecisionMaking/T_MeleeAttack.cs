@@ -24,7 +24,7 @@ public class T_MeleeAttack : MonoBehaviour {
     {
         currentTimeBetweenAttacks -= Time.deltaTime;
 
-        if(currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= this.GetComponent<Unit>().minimumDistanceToPlayer)
+        if(currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= this.GetComponent<T_EnemyMovement>().minimumDistanceToPlayer)
         {
             attackColor();
             Invoke("attack", 0.5f);

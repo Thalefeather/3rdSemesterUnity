@@ -32,7 +32,7 @@ public class T_BatAttack : MonoBehaviour {
     {
         currentTimeBetweenAttacks -= Time.deltaTime;
 
-        if (currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= this.gameObject.GetComponent<Unit>().minimumDistanceToPlayer)
+        if (currentTimeBetweenAttacks <= 0.5f && Vector2.Distance(this.transform.position, collision.gameObject.transform.position) <= this.gameObject.GetComponent<T_EnemyMovement>().minimumDistanceToPlayer)
         {
             attackColor();
             Invoke("attack", 0.5f);
