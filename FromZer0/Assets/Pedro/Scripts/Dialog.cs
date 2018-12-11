@@ -9,10 +9,19 @@ public class Dialog : MonoBehaviour {
     {
         public string[] Sentences;
     }
+    [System.Serializable]
+    public class DialogueOptionsClass
+    {
+        public string Description;
+        public string[] Sentences;
+        public bool triggerConversation;
+        public int increaseIndexTo = -1;
+    }
 
     T_DialogManager manager;
-    public int index = 0;
-    public MultiDimensionalString[] Dialogue;
+    public int dialogueIndex = 0;
+    public List<DialogueOptionsClass> DialogueOptions = new List<DialogueOptionsClass>();
+    //public MultiDimensionalString[] Dialogue;
 
 
 
@@ -31,12 +40,18 @@ public class Dialog : MonoBehaviour {
     {
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)//if dialog changing is added will have bug where dialog only changes once player leaves hitbox and comesback
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
         {
             manager.touchingNPC = true;
-            manager.sentences = Dialogue[index].Sentences;
+            manager.sentences = DialogueOptions[dialogueIndex].Sentences;
+            manager.talkingToThisGuy = this.GetComponent<Dialog>();
         }
     }
 
@@ -50,7 +65,8 @@ public class Dialog : MonoBehaviour {
 
     public void changeDialogueIndexTo (int value)
     {
-        index = value;
+        //dialogueIndex = DialogueOptions[dialogueIndex].increaseIndexTo;
+        dialogueIndex = value;
     }
 
 }

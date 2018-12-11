@@ -10,6 +10,8 @@ public class T_ItemDrop : MonoBehaviour {
     public Item item;
     public EquippableItem equipment;
     public float scrap = 0;
+    [Space]
+    public bool questDrop = false;
 
 
     private void Start()
@@ -21,11 +23,15 @@ public class T_ItemDrop : MonoBehaviour {
 
         if(equipment != null)
         {
-            GetComponent<SpriteRenderer>().color = new Color(255, 255, 0);
+            GetComponent<SpriteRenderer>().color = new Color(255, 0, 0);
         }
         if(scrap > 0)
         {
             GetComponent<SpriteRenderer>().color = new Color(0, 255, 0);
+        }
+        if(questDrop)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(255, 255, 0);
         }
     }
 

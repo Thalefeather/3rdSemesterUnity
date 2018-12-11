@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootTable:
   - name: gun parts
-    item: {fileID: 1967691400328034, guid: 1196e908518818e4b89ff9b2b36b0572, type: 2}
+    item: {fileID: 0}
     dropChance: 99
   bestDrop:
     name: 

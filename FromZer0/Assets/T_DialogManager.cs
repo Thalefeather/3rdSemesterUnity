@@ -25,8 +25,10 @@ public class T_DialogManager : MonoBehaviour {
 
     [Space]
 
+    public Dialog talkingToThisGuy;
     public bool interact = false;
     GameObject PC;
+    
 
 
     // Use this for initialization
@@ -109,7 +111,7 @@ public class T_DialogManager : MonoBehaviour {
             textDisplay.text = "";
             StartCoroutine(Type());
         }
-        else
+        else//End of conversation
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
@@ -117,6 +119,10 @@ public class T_DialogManager : MonoBehaviour {
             inConversation = false;
             index = 0;
             PC.GetComponent<T_Player_Inputs>().talking = false;
+            if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo != -1)//checks if the guy im talking to's current sentence wants to change to another sentence then does it
+            {
+                talkingToThisGuy.dialogueIndex = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo;
+            }
         }
 
         speedUpTyping = false;

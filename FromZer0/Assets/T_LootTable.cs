@@ -13,7 +13,8 @@ public class T_LootTable : MonoBehaviour {
     }
 
     public List<DropCurrency> LootTable = new List<DropCurrency>();
-    public DropCurrency bestDrop;
+    //public DropCurrency bestDrop;
+    public int bestDropIndex = -1;
 
     private void Start()
     {
@@ -24,33 +25,46 @@ public class T_LootTable : MonoBehaviour {
     {
         for (int i = 0; i < LootTable.Count; i++)
         {
+            
             int dropNumber = Random.Range(0, 101);
+            Debug.Log("Random Number" + dropNumber);
 
-            if(LootTable[i].dropChance >= dropNumber)
+            if (LootTable[i].dropChance >= dropNumber)
             {
-               if(bestDrop.item == null)
+                /*if(bestDrop.item == null)
+                 {
+                     bestDrop.name = LootTable[i].name;
+                     bestDrop.item = LootTable[i].item;
+                     bestDrop.dropChance = LootTable[i].dropChance;
+                 }
+                else if(LootTable[i].dropChance < bestDrop.dropChance)
+                 {
+                     bestDrop.name = LootTable[i].name;
+                     bestDrop.item = LootTable[i].item;
+                     bestDrop.dropChance = LootTable[i].dropChance;
+                 }
+                 Debug.Log("BEST ITEM: " + bestDrop.name);*/
+                Debug.Log("MATCH");
+                if(bestDropIndex == -1)
                 {
-                    bestDrop.name = LootTable[i].name;
-                    bestDrop.item = LootTable[i].item;
-                    bestDrop.dropChance = LootTable[i].dropChance;
+                    bestDropIndex = i;
                 }
-               else if(LootTable[i].dropChance < bestDrop.dropChance)
-                {
-                    bestDrop.name = LootTable[i].name;
-                    bestDrop.item = LootTable[i].item;
-                    bestDrop.dropChance = LootTable[i].dropChance;
+                else if(LootTable[i].dropChance < LootTable[bestDropIndex].dropChance)
+                 {
+                    bestDropIndex = i;
                 }
-                Debug.Log("BEST ITEM: " + bestDrop.name);
+
+                
             }
         }
     }
 
     public void spawnBestDrop()
     {
-        if (bestDrop.item != null)
+        if (bestDropIndex != -1)
         {
             Debug.Log("SPAWNED");
-            Instantiate(bestDrop.item, this.transform.position, Quaternion.identity);
+            Instantiate(LootTable[bestDropIndex].item, this.transform.position, Quaternion.identity);
         }
     }
 }
