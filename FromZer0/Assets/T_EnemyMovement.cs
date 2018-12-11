@@ -27,11 +27,13 @@ public class T_EnemyMovement : MonoBehaviour {
     {
         if (aggroed)
         {
-            FollowTargetWitouthRotation(pc.transform, minimumDistanceToPlayer, speed);
+            //FollowTargetWitouthRotation(pc.transform, minimumDistanceToPlayer, speed);
+            this.GetComponent<Unit>().target = pc.transform;
         }
         else
         {
-            FollowTargetWithRotation(startingPosition.transform, 0.1f, speed / 2);
+            //FollowTargetWithRotation(startingPosition.transform, 0.1f, speed / 2);
+            //this.GetComponent<Unit>().target = startingPosition.transform;
         }
 
     }
@@ -77,5 +79,15 @@ public class T_EnemyMovement : MonoBehaviour {
     private void OnBecameInvisible()
     {
         aggroed = false;
+    }
+
+    public bool notCloseEnough(Transform target)
+    {
+        if (Vector2.Distance(transform.position, target.position) > minimumDistanceToPlayer)
+        {
+            return true;
+        }
+        else
+            return false;
     }
 }

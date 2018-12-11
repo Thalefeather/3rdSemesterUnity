@@ -5,7 +5,6 @@ using System;
 public class Grid : MonoBehaviour
 {
     public LayerMask unwalkableMask;
-    public LayerMask unwalkableMask2;
     public Vector2 worldSize;
     public float nodeRadius;
 
@@ -40,7 +39,7 @@ public class Grid : MonoBehaviour
             for (int y = 0; y < gridSizeY; y++)
             {
                 Vector2 worldPoint = GetWorldPoint(x, y);
-                bool isWalkable = (Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask) == null && Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask2) == null);
+                bool isWalkable = (Physics2D.OverlapCircle(worldPoint, nodeRadius, unwalkableMask.value) == null);
                 grid[x, y] = new Node(isWalkable, worldPoint, x, y);
             }
         }
@@ -57,20 +56,57 @@ public class Grid : MonoBehaviour
     {
         List<Node> neighbours = new List<Node>();
 
-        for (int x = -depth; x <= depth; x++)
-        {
-            for (int y = -depth; y <= depth; y++)
-            {
-                if (x == 0 && y == 0) continue;
-                int checkX = node.gridX + x;
-                int checkY = node.gridY + y;
+         for (int x = -depth; x <= depth; x++)
+         {
+             for (int y = -depth; y <= depth; y++)
+             {
+                 if (x == 0 && y == 0) continue;
+                 int checkX = node.gridX + x;
+                 int checkY = node.gridY + y;
 
-                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
-                    neighbours.Add(grid[checkX, checkY]);
-            }
+                 if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                     neighbours.Add(grid[checkX, checkY]);
+             }
+         }
+
+         return neighbours;
+
+        /*int x = 0, y = 0;
+        y = 0;
+        y = 0;
+        for (x = -1; x <= 1; ++x)
+        {
+            var neighbor = AddNodeNeighbour(x, y, node);
+            if (neighbor != null)
+                yield return neighbor;
         }
 
-        return neighbours;
+        x = 0;
+        for (y = -1; y <= 1; ++y)
+        {
+            var neighbor = AddNodeNeighbour(x, y, node);
+            if (neighbor != null)
+                yield return neighbor;
+        }
+        yield return neighbours;*/
+    }
+
+    Node AddNodeNeighbour(int x, int y, Node node)
+    {
+        if (x == 0 && y == 0)
+        {
+            return null;
+        }
+
+        int checkX = node.gridX + x;
+        int checkY = node.gridY + y;
+
+        if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+        {
+            return grid[checkX, checkY];
+        }
+
+        return null;
     }
 
     public Node NodeFromWorldPoint(Vector2 worldPosition)

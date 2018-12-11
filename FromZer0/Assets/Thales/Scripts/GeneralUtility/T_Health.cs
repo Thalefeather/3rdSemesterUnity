@@ -47,6 +47,8 @@ public class T_Health : MonoBehaviour {
             {
                 TallyXpPlayer(XpWorth);
                 TallyCurrency(CurrencyWorth);
+
+                this.gameObject.GetComponent<T_LootTable>().spawnBestDrop();
                 Destroy(this.gameObject);
             }
             else if(this.gameObject.tag == "Player" && !dead)//if its the player and he aint dead yet
@@ -134,10 +136,8 @@ public class T_Health : MonoBehaviour {
     private void TallyCurrency(float amount)
     {
         GameObject PC_Inventory = GameObject.Find("TInventory");
-        GameObject ScrapUI = GameObject.Find("EarnedScrapRepresentationManager");
 
         PC_Inventory.GetComponent<T_CurrencyManager>().earnCurrency(amount);
-        ScrapUI.GetComponent<T_EarnedScrapCanvas>().setValue(amount);
     }
 
     private void EarnSP (float amount)
