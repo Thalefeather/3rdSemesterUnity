@@ -1341,12 +1341,32 @@ Prefab:
     - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
         type: 2}
       propertyPath: DialogueOptions.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
         type: 2}
       propertyPath: DialogueOptions.Array.data[0].Sentences.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].Sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[2].Sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[3].Sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].Sentences.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4344663524773298, guid: 1ec1268dbecfccd4f865d5d10a0587ab, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1383,17 +1403,207 @@ Prefab:
     - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
         type: 2}
       propertyPath: DialogueOptions.Array.data[0].Description
-      value: Im POOR
+      value: 0 - First Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
         type: 2}
       propertyPath: DialogueOptions.Array.data[0].Sentences.Array.data[0]
-      value: Im poor...
+      value: Hey, i need your help!
       objectReference: {fileID: 0}
     - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
         type: 2}
       propertyPath: DialogueOptions.Array.data[0].Sentences.Array.data[1]
+      value: I need you to go into the old factory and kill the Big Robot there
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].Description
+      value: 1 - Why?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].Sentences.Array.data[0]
+      value: Because of reasons i can't yet disclose.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].Sentences.Array.data[1]
       value: GET OUT OF MY HOME!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[2].Description
+      value: 2 - Ok.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[2].Sentences.Array.data[0]
+      value: Thanks!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[2].Sentences.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[3].Description
+      value: 3 - No.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[3].Sentences.Array.data[0]
+      value: Ah, C'mon, don't be like that!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[3].Sentences.Array.data[1]
+      value: GET OUT OF MY HOME!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].Description
+      value: 4 - Back after no
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].Sentences.Array.data[0]
+      value: Did you change your mind?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].Sentences.Array.data[1]
+      value: GET OUT OF MY HOME!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].triggerConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].Sentences.Array.data[2]
+      value: Afterwards bring me his eye.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].dialogueChoice1Text
+      value: Why?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].dialogueChoice2Text
+      value: Ok.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].dialogueChoice3Text
+      value: What? No way. Also, you smell bad.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].increaseIndexTo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].triggerConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].dialogueChoice1Text
+      value: But why though?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].dialogueChoice2Text
+      value: Seems Legit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].dialogueChoice3Text
+      value: Yeah.... No.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].dialogueChoice1toIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].dialogueChoice1toIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].triggerConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].dialogueChoice1Text
+      value: No.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].dialogueChoice2Text
+      value: '... No?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].dialogueChoice3Text
+      value: Ugh, I guess...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].dialogueChoice1toIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].dialogueChoice2toIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[4].dialogueChoice3toIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[3].increaseIndexTo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].dialogueChoice2toIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].dialogueChoice2toIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[1].dialogueChoice3toIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[0].dialogueChoice3toIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[2].increaseIndexTo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892503694693346, guid: 1ec1268dbecfccd4f865d5d10a0587ab,
+        type: 2}
+      propertyPath: DialogueOptions.Array.data[2].triggerConversation
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ec1268dbecfccd4f865d5d10a0587ab, type: 2}

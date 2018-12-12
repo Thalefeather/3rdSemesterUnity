@@ -8,7 +8,7 @@ public class Dialog : MonoBehaviour {
     public class DialogueOptionsClass
     {
         public string Description;
-        public string[] Sentences;
+        
         public bool triggerConversation;
         public int increaseIndexTo = -1;
         [Space]
@@ -20,6 +20,8 @@ public class Dialog : MonoBehaviour {
         [Space]
         public string dialogueChoice3Text = "";
         public int dialogueChoice3toIndex = 0;
+        [Space]
+        public string[] Sentences;
 
     }
 

@@ -104,7 +104,7 @@ public class T_DialogManager : MonoBehaviour {
             if (speedUpTyping == false)
                 yield return new WaitForSeconds(typingSpeed);
             else
-                yield return new WaitForSeconds(typingSpeed / 3);
+                yield return new WaitForSeconds(typingSpeed / 6);
         }
     }
 
