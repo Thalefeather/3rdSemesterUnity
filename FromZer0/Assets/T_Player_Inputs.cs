@@ -16,6 +16,8 @@ public class T_Player_Inputs : MonoBehaviour {
     T_PauseManager uiMenu;
     T_DialogManager uiDialog;
 
+    public GameObject androidControls;
+
     //states
     public bool idle = false;
     public bool moving = false;
@@ -28,6 +30,7 @@ public class T_Player_Inputs : MonoBehaviour {
 
     public bool talking = false;
     public bool endOfSentence = false;
+    public bool dialogueOptions = false;
 
     [Space]
 
@@ -67,6 +70,7 @@ public class T_Player_Inputs : MonoBehaviour {
     {
 
 #if UNITY_ANDROID
+        androidControls.SetActive(true);
         if (!paused && !dead)
         {
             //melee Attack and talk to npcs
@@ -76,7 +80,7 @@ public class T_Player_Inputs : MonoBehaviour {
                 {
                     pcMelee.attack();
                 }
-                else
+                else if(!dialogueOptions)
                 {
                     uiDialog.interact = true;
                 }
@@ -134,9 +138,18 @@ public class T_Player_Inputs : MonoBehaviour {
         }
 
         if (IisPressed && !talking)
-        {
+        {            
             uiMenu.TabPause();
             IisPressed = false;
+        }
+        else
+        {
+            androidControls.transform.GetChild(0).gameObject.SetActive(true);
+            androidControls.transform.GetChild(1).gameObject.SetActive(true);
+            androidControls.transform.GetChild(2).gameObject.SetActive(true);
+            androidControls.transform.GetChild(3).gameObject.SetActive(true);
+            androidControls.transform.GetChild(4).gameObject.SetActive(true);
+            androidControls.transform.GetChild(6).gameObject.SetActive(true);
         }
 
         if (StartisPressed && paused)//if "Cancel" in any menu, unpause and leave all menus
@@ -146,6 +159,40 @@ public class T_Player_Inputs : MonoBehaviour {
             StartisPressed = false;
         }
 
+        if(paused || talking || dialogueOptions)
+        {
+            androidControls.transform.GetChild(0).gameObject.SetActive(false);
+            androidControls.transform.GetChild(1).gameObject.SetActive(false);
+            androidControls.transform.GetChild(2).gameObject.SetActive(false);
+            androidControls.transform.GetChild(3).gameObject.SetActive(false);
+            androidControls.transform.GetChild(4).gameObject.SetActive(false);
+            androidControls.transform.GetChild(6).gameObject.SetActive(false);
+
+            androidControls.transform.GetChild(5).gameObject.SetActive(true);//inventory button
+        }
+        else
+        {
+            androidControls.transform.GetChild(0).gameObject.SetActive(true);
+            androidControls.transform.GetChild(1).gameObject.SetActive(true);
+            androidControls.transform.GetChild(2).gameObject.SetActive(true);
+            androidControls.transform.GetChild(3).gameObject.SetActive(true);
+            androidControls.transform.GetChild(4).gameObject.SetActive(true);
+            androidControls.transform.GetChild(6).gameObject.SetActive(true);
+
+            androidControls.transform.GetChild(5).gameObject.SetActive(true);//inventory button
+        }
+
+        if(talking && !dialogueOptions)//sets giant invisible button for dialogue
+        {
+            androidControls.transform.GetChild(7).gameObject.SetActive(true);
+        }
+        else
+        {
+            androidControls.transform.GetChild(7).gameObject.SetActive(false);
+        }
+
+
+
         /*if (Input.GetButtonDown("Interact") && !paused && !dead)
         {
             uiDialog.interact = true;
@@ -153,6 +200,7 @@ public class T_Player_Inputs : MonoBehaviour {
 
 
 #else
+        androidControls.SetActive(false);
         if (!paused && !dead)
         {
             //melee Attack and talk to npcs
@@ -162,7 +210,7 @@ public class T_Player_Inputs : MonoBehaviour {
                 {
                     pcMelee.attack();
                 }
-                else
+                else if(!dialogueOptions)
                 {
                     uiDialog.interact = true;
                 }            

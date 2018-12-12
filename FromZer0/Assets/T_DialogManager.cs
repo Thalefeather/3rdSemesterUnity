@@ -143,6 +143,8 @@ public class T_DialogManager : MonoBehaviour {
                 choice3.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice3Text;
 
                 DialogueOptions.SetActive(true);
+
+                PC.GetComponent<T_Player_Inputs>().dialogueOptions = true;
             }
             else if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo != -1)//checks if the guy im talking to's current sentence wants to change to another sentence then does it
             {
@@ -242,7 +244,7 @@ public class T_DialogManager : MonoBehaviour {
         DialogBoxMenu.SetActive(false);
         inConversation = false;
         index = 0;
-        PC.GetComponent<T_Player_Inputs>().talking = false;
+        PC.GetComponent<T_Player_Inputs>().dialogueOptions = false;
 
         Invoke("setInteractToTrue", 0.1f);
         

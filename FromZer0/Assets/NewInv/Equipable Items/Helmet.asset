@@ -13,10 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Helmet
   Icon: {fileID: 21300000, guid: 36e4987f1e3023748873fae9c09043ea, type: 3}
+  amount: 1
   MeleeBonus: 0
   RangeBonus: 0
   DefenseBonus: 200
   MeleePercentBonus: 0
-  RangePercentBonus: 2
+  RangePercentBonus: 0
   DefensePercentBonus: 0
+  Heal: 0
+  Laser: 0
+  Cooldown: 0
   EquipmentType: 0
