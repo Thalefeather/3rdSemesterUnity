@@ -43,6 +43,7 @@ public class T_Player_Inputs : MonoBehaviour {
     public bool YisPressed = false;
     public bool IisPressed = false;
     public bool StartisPressed = false;
+    public bool SwitchSpecialisPressed = false;
 
 
     // Use this for initialization
@@ -105,9 +106,10 @@ public class T_Player_Inputs : MonoBehaviour {
                 }
 
                 //toggle swap active skill
-                if (Input.GetButtonDown("Toggle Power"))
+                if (SwitchSpecialisPressed)
                 {
                     pcSpecial.toggleSwapActiveSkill();
+                    SwitchSpecialisPressed = false;
                 }
 
                 //dash
@@ -167,6 +169,7 @@ public class T_Player_Inputs : MonoBehaviour {
             androidControls.transform.GetChild(3).gameObject.SetActive(false);
             androidControls.transform.GetChild(4).gameObject.SetActive(false);
             androidControls.transform.GetChild(6).gameObject.SetActive(false);
+            androidControls.transform.GetChild(7).gameObject.SetActive(false);
 
             androidControls.transform.GetChild(5).gameObject.SetActive(true);//inventory button
         }
@@ -178,6 +181,7 @@ public class T_Player_Inputs : MonoBehaviour {
             androidControls.transform.GetChild(3).gameObject.SetActive(true);
             androidControls.transform.GetChild(4).gameObject.SetActive(true);
             androidControls.transform.GetChild(6).gameObject.SetActive(true);
+            androidControls.transform.GetChild(7).gameObject.SetActive(true);
 
             androidControls.transform.GetChild(5).gameObject.SetActive(true);//inventory button
         }
@@ -309,6 +313,11 @@ public class T_Player_Inputs : MonoBehaviour {
     public void StartButton()
     {
         StartisPressed = true;
+    }
+
+    public void SwitchSpecialButton()
+    {
+        SwitchSpecialisPressed = true;
     }
 
 
