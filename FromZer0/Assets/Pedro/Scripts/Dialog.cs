@@ -5,23 +5,27 @@ using TMPro;
 
 public class Dialog : MonoBehaviour {
     [System.Serializable]
-    public class MultiDimensionalString
-    {
-        public string[] Sentences;
-    }
-    [System.Serializable]
     public class DialogueOptionsClass
     {
         public string Description;
         public string[] Sentences;
         public bool triggerConversation;
         public int increaseIndexTo = -1;
+        [Space]
+        public string dialogueChoice1Text = "";
+        public int dialogueChoice1toIndex = 0;
+        [Space]
+        public string dialogueChoice2Text = "";
+        public int dialogueChoice2toIndex = 0;
+        [Space]
+        public string dialogueChoice3Text = "";
+        public int dialogueChoice3toIndex = 0;
+
     }
 
     T_DialogManager manager;
     public int dialogueIndex = 0;
     public List<DialogueOptionsClass> DialogueOptions = new List<DialogueOptionsClass>();
-    //public MultiDimensionalString[] Dialogue;
 
 
 
@@ -63,10 +67,5 @@ public class Dialog : MonoBehaviour {
         }
     }
 
-    public void changeDialogueIndexTo (int value)
-    {
-        //dialogueIndex = DialogueOptions[dialogueIndex].increaseIndexTo;
-        dialogueIndex = value;
-    }
 
 }

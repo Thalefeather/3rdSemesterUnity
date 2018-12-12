@@ -42,7 +42,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1526487206354630
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +235,10 @@ MonoBehaviour:
   continueButton: {fileID: 0}
   DialogBoxMenu: {fileID: 0}
   conversastionAvailableIcon: {fileID: 0}
+  DialogueOptions: {fileID: 0}
+  choice1: {fileID: 0}
+  choice2: {fileID: 0}
+  choice3: {fileID: 0}
   sentences:
   - This is my house
   - I dont own any furniture...
@@ -243,6 +247,7 @@ MonoBehaviour:
   speedUpTyping: 0
   inConversation: 0
   touchingNPC: 0
+  talkingToThisGuy: {fileID: 0}
   interact: 0
 --- !u!114 &114264219737771524
 MonoBehaviour:
@@ -255,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bd83af9f9e7c54ba57c25321991ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pages: {fileID: 0}
   PlayerLevel: {fileID: 0}
   ScrapAmount: {fileID: 0}
   HP: {fileID: 0}
@@ -293,6 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7447663e4b9a90a47b7495bc92cc8714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaserGun: {fileID: 11400000, guid: e05b83d7b2759d84d8686c69a946e6af, type: 2}
+  GunParts: {fileID: 11400000, guid: 6019fdfb7b6f27643a0a099eac44e824, type: 2}
+  Sword: {fileID: 11400000, guid: 23ff64f71b967cd46ac493224c623b10, type: 2}
+  SwordParts: {fileID: 11400000, guid: 81fee78211c562044bc8429cfe9ce977, type: 2}
 --- !u!114 &114530960206093226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,7 +366,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1e90453be09b446863443391d3596e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentences:
-  - I am the talky dude
-  - REAAAAD ME
-  - TESTTESTESTEETEAWTEAWREAWRAreawrawerewarwaereawrawerewar
+  dialogueIndex: 0
+  DialogueOptions: []

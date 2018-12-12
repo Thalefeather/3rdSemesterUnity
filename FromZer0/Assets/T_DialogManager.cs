@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class T_DialogManager : MonoBehaviour {
 
@@ -10,6 +11,12 @@ public class T_DialogManager : MonoBehaviour {
     [SerializeField] GameObject DialogBoxMenu;
 
     [SerializeField] GameObject conversastionAvailableIcon;
+    [Space]
+    [SerializeField] GameObject DialogueOptions;
+    [SerializeField] Text choice1;
+    [SerializeField] Text choice2;
+    [SerializeField] Text choice3;
+
 
 
     public string[] sentences;
@@ -57,7 +64,7 @@ public class T_DialogManager : MonoBehaviour {
             interact = false;
             PC.GetComponent<T_Player_Inputs>().talking = true;
         }
-        //jump sentence
+        //jump to next sentence
         else if(interact && endOfSentence && inConversation == true)
         {
             NextSentence();
@@ -112,23 +119,55 @@ public class T_DialogManager : MonoBehaviour {
             StartCoroutine(Type());
         }
         else//End of conversation
-        {
-            textDisplay.text = "";
+        {            
+            /*textDisplay.text = ""; //ORIGINAL CODE BEFORE ALL THE STUFF BELOW
             continueButton.SetActive(false);
             DialogBoxMenu.SetActive(false);
             inConversation = false;
             index = 0;
             PC.GetComponent<T_Player_Inputs>().talking = false;
-            if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo != -1)//checks if the guy im talking to's current sentence wants to change to another sentence then does it
+            if (talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo != -1)//checks if the guy im talking to's current sentence wants to change to another sentence tha
             {
                 talkingToThisGuy.dialogueIndex = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo;
+            }*/
+
+            textDisplay.text = "";
+            index = 0;
+            
+            if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].triggerConversation)
+            {
+                continueButton.SetActive(false);
+
+                choice1.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice1Text;
+                choice2.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice2Text;
+                choice3.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice3Text;
+
+                DialogueOptions.SetActive(true);
             }
+            else if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo != -1)//checks if the guy im talking to's current sentence wants to change to another sentence then does it
+            {
+                talkingToThisGuy.dialogueIndex = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo;
+
+                continueButton.SetActive(false);
+                DialogBoxMenu.SetActive(false);
+                inConversation = false;
+                PC.GetComponent<T_Player_Inputs>().talking = false;
+            }
+            else
+            {
+                continueButton.SetActive(false);
+                DialogBoxMenu.SetActive(false);
+                inConversation = false;
+                PC.GetComponent<T_Player_Inputs>().talking = false;
+            }
+
+
         }
 
         speedUpTyping = false;
     }
 
-    public void GetSentence(Collider2D collision)
+    /*public void GetSentence(Collider2D collision)
     {
         sentences = collision.GetComponent<T_DialogManager>().sentences;
     }
@@ -170,6 +209,49 @@ public class T_DialogManager : MonoBehaviour {
             continueButton.SetActive(true);
             endOfSentence = true;
         }
+    }*/
+
+    public void DialogOptionChosen(int value)
+    {
+        DialogueOptions.SetActive(false);
+
+        if(value == 1)
+        {
+            talkingToThisGuy.dialogueIndex = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice1toIndex;
+            //StartCoroutine(Type());
+            //NextSentence();
+            //interact = true;
+        }
+        if (value == 2)
+        {
+            talkingToThisGuy.dialogueIndex = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice2toIndex;
+            //StartCoroutine(Type());
+            //NextSentence();
+            //interact = true;
+        }
+        if (value == 3)
+        {
+            talkingToThisGuy.dialogueIndex = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice3toIndex;
+            //StartCoroutine(Type());
+            //NextSentence();
+            //interact = true;
+        }
+
+        textDisplay.text = "";
+        continueButton.SetActive(false);
+        DialogBoxMenu.SetActive(false);
+        inConversation = false;
+        index = 0;
+        PC.GetComponent<T_Player_Inputs>().talking = false;
+
+        Invoke("setInteractToTrue", 0.1f);
+        
+
+
     }
 
+    private void setInteractToTrue()
+    {
+        interact = true;
+    }
 }
