@@ -18,6 +18,9 @@ public class T_BossAttacks : MonoBehaviour {
     float patternCounter = 4.5f;
     int meteorTotalAmountCounter = 0;
 
+    [Space]
+    public GameObject NPC;
+
     // Use this for initialization
     void Start () {
        //AttackPattern1(false);
@@ -78,6 +81,7 @@ public class T_BossAttacks : MonoBehaviour {
         if(collision.tag == "Player")
         {
             transform.GetChild(3).gameObject.SetActive(true);//activates door when player enters boss room
+            NPC.GetComponent<Dialog>().dialogueIndex = 5;
         }
     }
 
