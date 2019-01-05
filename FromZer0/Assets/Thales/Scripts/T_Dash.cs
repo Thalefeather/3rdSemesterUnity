@@ -19,10 +19,13 @@ public class T_Dash : MonoBehaviour {
     [Space]
     public bool isDashing = false;
 
+    T_Player_Inputs inputs;
+
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        inputs = this.GetComponent<T_Player_Inputs>();
     }
 
     private void Update()
@@ -54,9 +57,20 @@ public class T_Dash : MonoBehaviour {
     {
         if (dashCDCounter <= 0)
         {
+            var x = Input.GetAxis("Horizontal");
+            var y = Input.GetAxis("Vertical");
+
             isDashing = true;
             currentDashAmount++;
-            rb.velocity = this.gameObject.transform.up.normalized * dashSpeed;
+            if(!inputs.inCombo)
+            {
+                rb.velocity = this.gameObject.transform.up.normalized * dashSpeed;
+            }
+            else
+            {
+                rb.velocity = new Vector2(x, y).normalized * dashSpeed;
+            }
+            
             dashingCounter = dashDuration;
 
             if(currentDashAmount >= rawDashAmount)

@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class T_PauseManager : MonoBehaviour {
 
+    [SerializeField] public Button firstButton;
     [SerializeField] bool isPaused = false;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject tabMenu;
     [SerializeField] GameObject deadMenu;
+    [SerializeField] GameObject teleportMenu;
     [Space]
     public SimpleHealthBar levelBar;
     public SimpleHealthBar walkingBar;
@@ -27,6 +30,7 @@ public class T_PauseManager : MonoBehaviour {
     void Start () {
         Unpause();
         TabUnpause();
+        teleportMenu.SetActive(false);
         PC = GameObject.Find("Player");
     }
 	
@@ -112,6 +116,20 @@ public class T_PauseManager : MonoBehaviour {
     public void DeadPause()//called on DEAD
     {
         deadMenu.SetActive(!deadMenu.activeInHierarchy);
+    }
+
+    public void TeleportPause()
+    {
+        teleportMenu.SetActive(true);
+        isPaused = true;
+        Time.timeScale = 0;
+    }
+
+    public void TeleportUnpause()
+    {
+        teleportMenu.SetActive(false);
+        isPaused = false;
+        Time.timeScale = 1;
     }
 
 

@@ -24,6 +24,7 @@ public class T_Player_Inputs : MonoBehaviour {
     public bool dashing = false;
     public bool paused = false;
     public bool touchingNpc = false;
+    public bool touchingTeleporter = false;
     public bool inCombo = false;
 
     [Space]
@@ -95,7 +96,7 @@ public class T_Player_Inputs : MonoBehaviour {
                 if (XisPressed)
                 {
                     pcRanged.fire();
-                    XisPressed = false;
+                    //XisPressed = false;
                 }
 
                 //use special
@@ -210,14 +211,18 @@ public class T_Player_Inputs : MonoBehaviour {
             //melee Attack and talk to npcs
             if (Input.GetButtonDown("Fire1"))
             {
-                if(!touchingNpc)
+                if(!touchingNpc && !touchingTeleporter)
                 {
                     pcMelee.attack();
                 }
-                else if(!dialogueOptions)
+                else if(!dialogueOptions && touchingNpc)
                 {
                     uiDialog.interact = true;
-                }            
+                }
+                else if (!dialogueOptions && touchingTeleporter)
+                {
+                    uiMenu.TeleportPause();
+                }
             }
 
             if (!talking)
@@ -263,6 +268,7 @@ public class T_Player_Inputs : MonoBehaviour {
         if (Input.GetButtonDown("Cancel"))
         {
             uiMenu.Pause();
+            uiMenu.firstButton.Select();
         }
 
         if (Input.GetButtonDown("Tab") && !talking)
@@ -303,6 +309,11 @@ public class T_Player_Inputs : MonoBehaviour {
     public void XButton()
     {
         XisPressed = true;
+    }
+
+    public void XButtonUP()
+    {
+        XisPressed = false;
     }
 
     public void IButton()

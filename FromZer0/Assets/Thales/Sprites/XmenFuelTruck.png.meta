@@ -1,0 +1,406 @@
+fileFormatVersion: 2
+guid: 4990f12872d34c948b4727b1a82a997b
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Truck
+    21300002: XmenFuelTruck_1
+    21300004: XmenFuelTruck_2
+    21300006: XmenFuelTruck_3
+    21300008: XmenFuelTruck_4
+    21300010: XmenFuelTruck_5
+    21300012: XmenFuelTruck_6
+    21300014: XmenFuelTruck_7
+    21300016: XmenFuelTruck_8
+    21300018: XmenFuelTruck_9
+    21300020: XmenFuelTruck_10
+    21300022: XmenFuelTruck_11
+    21300024: XmenFuelTruck_12
+    21300026: XmenFuelTruck_13
+    21300028: XmenFuelTruck_14
+    21300030: XmenFuelTruck_15
+    21300032: XmenFuelTruck_16
+    21300034: XmenFuelTruck_17
+    21300036: XmenFuelTruck_18
+    21300038: XmenFuelTruck_19
+    21300040: XmenFuelTruck_20
+    21300042: XmenFuelTruck_21
+    21300044: XmenFuelTruck_22
+    21300046: XmenFuelTruck_23
+    21300048: XmenFuelTruck_24
+    21300050: XmenFuelTruck_25
+    21300052: XmenFuelTruck_26
+    21300054: XmenFuelTruck_27
+    21300056: XmenFuelTruck_28
+    21300058: XmenFuelTruck_29
+    21300060: XmenFuelTruck_30
+    21300062: XmenFuelTruck_31
+    21300064: XmenFuelTruck_32
+    21300066: XmenFuelTruck_33
+    21300068: XmenFuelTruck_34
+    21300070: XmenFuelTruck_35
+    21300072: XmenFuelTruck_36
+    21300074: XmenFuelTruck_37
+    21300076: XmenFuelTruck_38
+    21300078: XmenFuelTruck_39
+    21300080: XmenFuelTruck_40
+    21300082: XmenFuelTruck_41
+    21300084: XmenFuelTruck_42
+    21300086: XmenFuelTruck_43
+    21300088: XmenFuelTruck_44
+    21300090: XmenFuelTruck_45
+    21300092: XmenFuelTruck_46
+    21300094: XmenFuelTruck_47
+    21300096: XmenFuelTruck_48
+    21300098: XmenFuelTruck_49
+    21300100: XmenFuelTruck_50
+    21300102: XmenFuelTruck_51
+    21300104: XmenFuelTruck_52
+    21300106: XmenFuelTruck_53
+    21300108: XmenFuelTruck_54
+    21300110: XmenFuelTruck_55
+    21300112: XmenFuelTruck_56
+    21300114: XmenFuelTruck_57
+    21300116: XmenFuelTruck_58
+    21300118: XmenFuelTruck_59
+    21300120: XmenFuelTruck_60
+    21300122: XmenFuelTruck_61
+    21300124: XmenFuelTruck_62
+    21300126: XmenFuelTruck_63
+    21300128: XmenFuelTruck_64
+    21300130: XmenFuelTruck_65
+    21300132: XmenFuelTruck_66
+    21300134: XmenFuelTruck_67
+    21300136: XmenFuelTruck_68
+    21300138: XmenFuelTruck_69
+    21300140: XmenFuelTruck_70
+    21300142: XmenFuelTruck_71
+    21300144: XmenFuelTruck_72
+    21300146: XmenFuelTruck_73
+    21300148: XmenFuelTruck_74
+    21300150: XmenFuelTruck_75
+    21300152: XmenFuelTruck_76
+    21300154: XmenFuelTruck_77
+    21300156: XmenFuelTruck_78
+    21300158: XmenFuelTruck_79
+    21300160: XmenFuelTruck_80
+    21300162: XmenFuelTruck_81
+    21300164: XmenFuelTruck_82
+    21300166: XmenFuelTruck_83
+    21300168: XmenFuelTruck_84
+    21300170: XmenFuelTruck_85
+    21300172: XmenFuelTruck_86
+    21300174: XmenFuelTruck_87
+    21300176: XmenFuelTruck_88
+    21300178: XmenFuelTruck_89
+    21300180: XmenFuelTruck_90
+    21300182: XmenFuelTruck_91
+    21300184: XmenFuelTruck_92
+    21300186: XmenFuelTruck_93
+    21300188: XmenFuelTruck_94
+    21300190: XmenFuelTruck_95
+    21300192: XmenFuelTruck_96
+    21300194: XmenFuelTruck_97
+    21300196: XmenFuelTruck_98
+    21300198: XmenFuelTruck_99
+    21300200: XmenFuelTruck_100
+    21300202: XmenFuelTruck_101
+    21300204: XmenFuelTruck_102
+    21300206: XmenFuelTruck_103
+    21300208: XmenFuelTruck_104
+    21300210: XmenFuelTruck_105
+    21300212: XmenFuelTruck_106
+    21300214: XmenFuelTruck_107
+    21300216: XmenFuelTruck_108
+    21300218: XmenFuelTruck_109
+    21300220: XmenFuelTruck_110
+    21300222: XmenFuelTruck_111
+    21300224: XmenFuelTruck_112
+    21300226: XmenFuelTruck_113
+    21300228: XmenFuelTruck_114
+    21300230: XmenFuelTruck_115
+    21300232: XmenFuelTruck_116
+    21300234: XmenFuelTruck_117
+    21300236: XmenFuelTruck_118
+    21300238: XmenFuelTruck_119
+    21300240: XmenFuelTruck_120
+    21300242: XmenFuelTruck_121
+    21300244: XmenFuelTruck_122
+    21300246: XmenFuelTruck_123
+    21300248: XmenFuelTruck_124
+    21300250: XmenFuelTruck_125
+    21300252: XmenFuelTruck_126
+    21300254: XmenFuelTruck_127
+    21300256: XmenFuelTruck_128
+    21300258: XmenFuelTruck_129
+    21300260: XmenFuelTruck_130
+    21300262: XmenFuelTruck_131
+    21300264: XmenFuelTruck_132
+    21300266: XmenFuelTruck_133
+    21300268: XmenFuelTruck_134
+    21300270: XmenFuelTruck_135
+    21300272: XmenFuelTruck_136
+    21300274: XmenFuelTruck_137
+    21300276: XmenFuelTruck_138
+    21300278: XmenFuelTruck_139
+    21300280: XmenFuelTruck_140
+    21300282: XmenFuelTruck_141
+    21300284: XmenFuelTruck_142
+    21300286: XmenFuelTruck_143
+    21300288: XmenFuelTruck_144
+    21300290: XmenFuelTruck_145
+    21300292: XmenFuelTruck_146
+    21300294: XmenFuelTruck_147
+    21300296: XmenFuelTruck_148
+    21300298: XmenFuelTruck_149
+    21300300: XmenFuelTruck_150
+    21300302: XmenFuelTruck_151
+    21300304: XmenFuelTruck_152
+    21300306: XmenFuelTruck_153
+    21300308: XmenFuelTruck_154
+    21300310: XmenFuelTruck_155
+    21300312: XmenFuelTruck_156
+    21300314: XmenFuelTruck_157
+    21300316: XmenFuelTruck_158
+    21300318: XmenFuelTruck_159
+    21300320: XmenFuelTruck_160
+    21300322: XmenFuelTruck_161
+    21300324: XmenFuelTruck_162
+    21300326: XmenFuelTruck_163
+    21300328: XmenFuelTruck_164
+    21300330: XmenFuelTruck_165
+    21300332: XmenFuelTruck_166
+    21300334: XmenFuelTruck_167
+    21300336: XmenFuelTruck_168
+    21300338: XmenFuelTruck_169
+    21300340: XmenFuelTruck_170
+    21300342: XmenFuelTruck_171
+    21300344: XmenFuelTruck_172
+    21300346: XmenFuelTruck_173
+    21300348: XmenFuelTruck_174
+    21300350: XmenFuelTruck_175
+    21300352: XmenFuelTruck_176
+    21300354: XmenFuelTruck_177
+    21300356: XmenFuelTruck_178
+    21300358: XmenFuelTruck_179
+    21300360: XmenFuelTruck_180
+    21300362: XmenFuelTruck_181
+    21300364: XmenFuelTruck_182
+    21300366: XmenFuelTruck_183
+    21300368: XmenFuelTruck_184
+    21300370: XmenFuelTruck_185
+    21300372: XmenFuelTruck_186
+    21300374: XmenFuelTruck_187
+    21300376: XmenFuelTruck_188
+    21300378: XmenFuelTruck_189
+    21300380: XmenFuelTruck_190
+    21300382: XmenFuelTruck_191
+    21300384: XmenFuelTruck_192
+    21300386: XmenFuelTruck_193
+    21300388: XmenFuelTruck_194
+    21300390: XmenFuelTruck_195
+    21300392: XmenFuelTruck_196
+    21300394: XmenFuelTruck_197
+    21300396: XmenFuelTruck_198
+    21300398: XmenFuelTruck_199
+    21300400: XmenFuelTruck_200
+    21300402: XmenFuelTruck_201
+    21300404: XmenFuelTruck_202
+    21300406: XmenFuelTruck_203
+    21300408: XmenFuelTruck_204
+    21300410: XmenFuelTruck_205
+    21300412: XmenFuelTruck_206
+    21300414: XmenFuelTruck_207
+    21300416: XmenFuelTruck_208
+    21300418: XmenFuelTruck_209
+    21300420: XmenFuelTruck_210
+    21300422: XmenFuelTruck_211
+    21300424: XmenFuelTruck_212
+    21300426: XmenFuelTruck_213
+    21300428: XmenFuelTruck_214
+    21300430: XmenFuelTruck_215
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Truck
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 243
+        width: 256
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0a5716bd4de5d4e8d3bdd62b696a2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XmenFuelTruck_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 243
+        width: 256
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81613f9c12ecdbc4d824aca239b69a2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XmenFuelTruck_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 83
+        width: 256
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53603777731571442905583b2313fd4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XmenFuelTruck_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 83
+        width: 256
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ebba0c35685264f9f30a12d3bee4dc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2a7af784506874b44a4670e5df1173cd
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

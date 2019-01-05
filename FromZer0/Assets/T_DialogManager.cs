@@ -13,6 +13,7 @@ public class T_DialogManager : MonoBehaviour {
     [SerializeField] GameObject conversastionAvailableIcon;
     [Space]
     [SerializeField] GameObject DialogueOptions;
+    [SerializeField] Button firstButton;
     [SerializeField] Text choice1;
     [SerializeField] Text choice2;
     [SerializeField] Text choice3;
@@ -139,6 +140,7 @@ public class T_DialogManager : MonoBehaviour {
                 continueButton.SetActive(false);
 
                 choice1.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice1Text;
+                firstButton.Select();
                 choice2.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice2Text;
                 choice3.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice3Text;
 
