@@ -5,11 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class T_ButtonManager : MonoBehaviour {
 
-    public Item LaserGun;
-    public Item GunParts;
-
-    public Item Sword;
-    public Item SwordParts;
+    public Item[] items;
 
     // Use this for initialization
     void Start () {
@@ -48,22 +44,62 @@ public class T_ButtonManager : MonoBehaviour {
         GameObject Tinv = GameObject.Find("TInventory");
         if (value == 0)
         {
-            if(Inv.GetComponent<PInventory>().CheckIfItemIsInInventory(GunParts) && Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(500))
+            if(Inv.GetComponent<PInventory>().CheckIfItemIsInInventory(items[1]) && Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(500))//laser gun crafting
             {
-                Inv.GetComponent<PInventory>().RemoveItem(GunParts);
-                Inv.GetComponent<PInventory>().AddItem(LaserGun);
+                Inv.GetComponent<PInventory>().RemoveItem(items[1]);
+                Inv.GetComponent<PInventory>().AddItem(items[0]);
                 Tinv.GetComponent<T_CurrencyManager>().loseCurrency(500);
             }
         }
         if(value == 1)
         {
-            if (Inv.GetComponent<PInventory>().CheckIfItemIsInInventory(SwordParts) && Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(250))
+            if (Inv.GetComponent<PInventory>().CheckIfItemIsInInventory(items[3]) && Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(250))//sword crafting
             {
-                Inv.GetComponent<PInventory>().RemoveItem(SwordParts);
-                Inv.GetComponent<PInventory>().AddItem(Sword);
+                Inv.GetComponent<PInventory>().RemoveItem(items[3]);
+                Inv.GetComponent<PInventory>().AddItem(items[2]);
                 Tinv.GetComponent<T_CurrencyManager>().loseCurrency(250);
             }
         }
+    }
+
+    public void Buy(int value)
+    {
+        GameObject Inv = GameObject.Find("Inventory");
+        GameObject Tinv = GameObject.Find("TInventory");
+        if (value == 0)
+        {
+            if (Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(500))
+            {
+                Inv.GetComponent<PInventory>().AddItem(items[0]);
+                Tinv.GetComponent<T_CurrencyManager>().loseCurrency(500);
+            }
+        }
+        if (value == 1)
+        {
+            if (Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(350))
+            {
+                Inv.GetComponent<PInventory>().AddItem(items[2]);
+                Tinv.GetComponent<T_CurrencyManager>().loseCurrency(350);
+            }
+        }
+        if (value == 2)
+        {
+            if (Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(200))
+            {
+                Inv.GetComponent<PInventory>().AddItem(items[4]);
+                Tinv.GetComponent<T_CurrencyManager>().loseCurrency(200);
+            }
+        }
+        if (value == 3)
+        {
+            if (Tinv.GetComponent<T_CurrencyManager>().checkIfEnough(100))
+            {
+                Inv.GetComponent<PInventory>().AddItem(items[3]);
+                Tinv.GetComponent<T_CurrencyManager>().loseCurrency(100);
+            }
+        }
+
+
     }
 
 }

@@ -11,6 +11,7 @@ public class T_PauseManager : MonoBehaviour {
     [SerializeField] GameObject tabMenu;
     [SerializeField] GameObject deadMenu;
     [SerializeField] GameObject teleportMenu;
+    [SerializeField] GameObject storeMenu;
     [Space]
     public SimpleHealthBar levelBar;
     public SimpleHealthBar walkingBar;
@@ -130,6 +131,20 @@ public class T_PauseManager : MonoBehaviour {
         teleportMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1;
+    }
+
+    public void StorePause()
+    {
+        TabPause();
+
+        storeMenu.SetActive(true);
+    }
+
+    public void StoreUnpause()
+    {
+        TabUnpause();
+
+        storeMenu.SetActive(false);
     }
 
 

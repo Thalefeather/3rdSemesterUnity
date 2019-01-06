@@ -10,6 +10,7 @@ public class Dialog : MonoBehaviour {
         public string Description;
         
         public bool triggerConversation;
+        public bool triggerStore;
         public int increaseIndexTo = -1;
         [Space]
         public string dialogueChoice1Text = "";
@@ -26,6 +27,7 @@ public class Dialog : MonoBehaviour {
     }
 
     T_DialogManager manager;
+    public T_PauseManager pauseManager;
     public int dialogueIndex = 0;
     public List<DialogueOptionsClass> DialogueOptions = new List<DialogueOptionsClass>();
 
@@ -40,6 +42,7 @@ public class Dialog : MonoBehaviour {
     void Start()
     {
         manager = GameObject.Find("UIManagers").transform.GetChild(3).GetComponent<T_DialogManager>();
+        pauseManager = GameObject.Find("UIManagers").transform.GetChild(1).GetComponent<T_PauseManager>();
     }
 
     void Update()

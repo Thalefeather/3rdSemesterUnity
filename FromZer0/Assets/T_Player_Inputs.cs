@@ -331,5 +331,15 @@ public class T_Player_Inputs : MonoBehaviour {
         SwitchSpecialisPressed = true;
     }
 
+    public void SetInteractToTrue()
+    {
+        uiDialog.interact = true;
+    }
+
+    public void SetInteractToTrueWithDelay()
+    {
+        Invoke("SetInteractToTrue", 0.2f);
+    }
+
 
 }

@@ -135,18 +135,43 @@ public class T_DialogManager : MonoBehaviour {
             textDisplay.text = "";
             index = 0;
             
-            if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].triggerConversation)
+            if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].triggerConversation || talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].triggerStore)
             {
-                continueButton.SetActive(false);
+                if (talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].triggerConversation)
+                {
+                    continueButton.SetActive(false);
 
-                choice1.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice1Text;
-                firstButton.Select();
-                choice2.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice2Text;
-                choice3.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice3Text;
+                    choice1.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice1Text;
+                    firstButton.Select();
+                    choice2.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice2Text;
+                    choice3.text = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].dialogueChoice3Text;
 
-                DialogueOptions.SetActive(true);
+                    DialogueOptions.SetActive(true);
 
-                PC.GetComponent<T_Player_Inputs>().dialogueOptions = true;
+                    PC.GetComponent<T_Player_Inputs>().dialogueOptions = true;
+                }
+                else//THIS ENTIRE ELSE IS A WHOLE BUNCH OF SPAGHETTI THAT JUST REDOES WHAT IS BELOW, NOT ENOUGH PATIENCE OR TIME TO MAKE IT GOOD
+                {
+                    if (talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo != -1)//checks if the guy im talking to's current sentence wants to change to another sentence then does it
+                    {
+                        talkingToThisGuy.dialogueIndex = talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo;
+
+                        continueButton.SetActive(false);
+                        DialogBoxMenu.SetActive(false);
+                        inConversation = false;
+                        PC.GetComponent<T_Player_Inputs>().talking = false;
+                    }
+                    else
+                    {
+                        continueButton.SetActive(false);
+                        DialogBoxMenu.SetActive(false);
+                        inConversation = false;
+                        PC.GetComponent<T_Player_Inputs>().talking = false;
+                    }
+
+                    //OPEN STORE MENU HERE
+                    talkingToThisGuy.pauseManager.StorePause();
+                }
             }
             else if(talkingToThisGuy.DialogueOptions[talkingToThisGuy.dialogueIndex].increaseIndexTo != -1)//checks if the guy im talking to's current sentence wants to change to another sentence then does it
             {
