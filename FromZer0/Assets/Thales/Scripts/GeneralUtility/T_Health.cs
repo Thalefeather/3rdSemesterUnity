@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class T_Health : MonoBehaviour {
-
     [SerializeField] public float maxHealth = 10f;
     [SerializeField] public float currentHealth = 10f;
     [SerializeField] float XpWorth = 10f;
@@ -36,9 +35,8 @@ public class T_Health : MonoBehaviour {
             PC = GameObject.Find("Player");
             
         }
-        
     }
-	
+
     private void CheckIfDeadThenKill ()
     {
         if(currentHealth<=0)
@@ -49,7 +47,8 @@ public class T_Health : MonoBehaviour {
                 TallyCurrency(CurrencyWorth);
 
                 this.gameObject.GetComponent<T_LootTable>().spawnBestDrop();
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
             else if(this.gameObject.tag == "Player" && !dead)//if its the player and he aint dead yet
             {
