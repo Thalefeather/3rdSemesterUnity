@@ -78,11 +78,11 @@ public class T_Player_Inputs : MonoBehaviour {
             //melee Attack and talk to npcs
             if (AisPressed)
             {
-                if (!touchingNpc)
+                if (!touchingNpc && !touchingTeleporter)
                 {
                     pcMelee.attack();
                 }
-                else if(!dialogueOptions)
+                else if(!dialogueOptions && touchingNpc)
                 {
                     uiDialog.interact = true;
                 }
