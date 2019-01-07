@@ -86,6 +86,10 @@ public class T_Player_Inputs : MonoBehaviour {
                 {
                     uiDialog.interact = true;
                 }
+                else if (!dialogueOptions && touchingTeleporter)
+                {
+                    uiMenu.TeleportPause();
+                }
 
                 AisPressed = false;
             }
