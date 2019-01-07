@@ -52,13 +52,19 @@ public class T_SkillTracker : MonoBehaviour {
 
             if(Playerlevel)
             {
-                this.gameObject.GetComponent<T_Health>().maxHealth += 10;
+                this.gameObject.GetComponent<T_Health>().maxHealth += 10;//earn more health per level and heal
                 this.gameObject.GetComponent<T_Health>().Heal(10);
+                this.gameObject.GetComponent<T_Health>().maxSP += 10;//earn more sp per level and add it
+                this.gameObject.GetComponent<T_Health>().currentSP = this.gameObject.GetComponent<T_Health>().maxSP;
+                this.gameObject.GetComponent<T_Health>().LoseSP(0);//so the bar will update
                 levelUpOn();
             }
             else
             {
                 skillUpOn();
+                this.gameObject.GetComponent<T_Health>().maxSP += 1;//earn more sp per level and add it
+                this.gameObject.GetComponent<T_Health>().currentSP += 1;
+                this.gameObject.GetComponent<T_Health>().LoseSP(0);//so the bar will update
             }
             
         }

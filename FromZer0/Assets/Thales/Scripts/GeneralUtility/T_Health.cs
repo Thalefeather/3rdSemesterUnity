@@ -26,6 +26,7 @@ public class T_Health : MonoBehaviour {
     void Start () {
         if (this.gameObject.tag == "Player")//for players
         {
+            currentSP = maxSP;
             SPBar.UpdateBar(currentSP, maxSP);
             rb = GetComponent<Rigidbody2D>();
             this.GetComponent<T_Player_Inputs>().dead = false;
@@ -85,13 +86,13 @@ public class T_Health : MonoBehaviour {
         else
         if (type == 0)
         {
-            PC.GetComponent<T_Health>().EarnSP(10);
+            //PC.GetComponent<T_Health>().EarnSP(10);
             currentHealth = currentHealth - dmg;
         }
         else
         if (type == 1)
         {
-            PC.GetComponent<T_Health>().EarnSP(20);
+            //PC.GetComponent<T_Health>().EarnSP(20);
             currentHealth = currentHealth - dmg;
         }
         if (type == 2)

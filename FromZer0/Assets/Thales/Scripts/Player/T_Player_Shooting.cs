@@ -27,10 +27,11 @@ public class T_Player_Shooting : MonoBehaviour {
 
     public void fire()
     {
-        if (shotCounter <= 0)
+        if (shotCounter <= 0 && this.gameObject.GetComponent<T_Health>().currentSP >= 2)
         {
             shoot();
             shotCounter = rateOfFire;
+            this.gameObject.GetComponent<T_Health>().LoseSP(2);
         }
     }
 

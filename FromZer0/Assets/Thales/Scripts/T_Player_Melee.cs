@@ -59,36 +59,47 @@ public class T_Player_Melee : MonoBehaviour {
     public void attack()
     {
         //Debug.Log("ATTACK IS CALLED");
-        //Record time of last button click
-        spaceBetweenClicks = Time.time - lastClickedTime;
-        lastClickedTime = Time.time;
-        noOfClicks++;
-        if (noOfClicks == 1 && attackCounter <= 0)
+        if(this.gameObject.GetComponent<T_Health>().currentSP >= 1)//check if enough sp for attack
         {
-            //animator.SetBool("Attack1", true);
-            executeAttack1();
+            //Record time of last button click
+            spaceBetweenClicks = Time.time - lastClickedTime;
+            lastClickedTime = Time.time;
+            noOfClicks++;
+            if (noOfClicks == 1 && attackCounter <= 0)
+            {
+                //animator.SetBool("Attack1", true);
+                executeAttack1();
+                //decrease SP per attack
+                this.gameObject.GetComponent<T_Health>().LoseSP(1);
+            }
+            if (noOfClicks == 1 && attackCounter > 0)
+            {
+                noOfClicks = 0;
+            }
+            if (noOfClicks == 2)
+            {
+                //animator.SetBool("Attack1", true);
+                executeAttack2();
+                //Invoke("executeAttack2", delayCombo1to2);
+                //decrease SP per attack
+                this.gameObject.GetComponent<T_Health>().LoseSP(1);
+            }
+            if (noOfClicks == 3)
+            {
+                //animator.SetBool("Attack1", true);
+                executeAttack3();
+                //Invoke("executeAttack3", delayCombo2to3);
+                noOfClicks = 0;
+                attackCounter = attackRate;
+                //decrease SP per attack
+                this.gameObject.GetComponent<T_Health>().LoseSP(1);
+            }
+
+            //limit/clamp no of clicks between 0 and 3 because you have combo for 3 clicks
+            noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
+
+
         }
-        if (noOfClicks == 1 && attackCounter > 0)
-        {
-            noOfClicks = 0;
-        }
-        if (noOfClicks == 2)
-        {
-            //animator.SetBool("Attack1", true);
-            executeAttack2();
-            //Invoke("executeAttack2", delayCombo1to2);
-        }
-        if (noOfClicks == 3)
-        {
-            //animator.SetBool("Attack1", true);
-            executeAttack3();
-            //Invoke("executeAttack3", delayCombo2to3);
-            noOfClicks = 0;
-            attackCounter = attackRate;
-        }
-        
-        //limit/clamp no of clicks between 0 and 3 because you have combo for 3 clicks
-        noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
     }
 
     private void executeAttack1()

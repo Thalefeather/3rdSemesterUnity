@@ -12,7 +12,8 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
     [SerializeField] Text PlayerLevel;
     [SerializeField] Text ScrapAmount;
     [SerializeField] Text HP;
-
+    [SerializeField] Text SP;
+    [Space]
     [SerializeField] Text PlayerLevelBellow;
     [SerializeField] Text WalkingLevel;
     [SerializeField] Text DefenseLevel;
@@ -47,7 +48,7 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
         var totalHP = Z.GetComponent<T_Health>().maxHealth;
 
         HP.text = currentHP.ToString("F0") + "/" + totalHP.ToString("F0");
-
+        SP.text = Z.GetComponent<T_Health>().currentSP.ToString("F0") + "/" + Z.GetComponent<T_Health>().maxSP.ToString("F0");
 
 
 

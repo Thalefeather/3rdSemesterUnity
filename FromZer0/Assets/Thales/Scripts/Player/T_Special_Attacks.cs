@@ -41,6 +41,7 @@ public class T_Special_Attacks : MonoBehaviour {
 
         CdBar.UpdateBar(useCounter, currentCDMax);
 
+
     }
 
     void Heal()
