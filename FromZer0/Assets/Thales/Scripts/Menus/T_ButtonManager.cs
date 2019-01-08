@@ -19,7 +19,7 @@ public class T_ButtonManager : MonoBehaviour {
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void GoToScene(int scene)
@@ -99,6 +99,22 @@ public class T_ButtonManager : MonoBehaviour {
             }
         }
 
+
+    }
+
+    public void LogoutAndExit()
+    {
+        Debug.Log("Logout and QUIT!");
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
+
+    }
+
+    public void Logout()
+    {
+        Debug.Log("Logout");
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
 
     }
 

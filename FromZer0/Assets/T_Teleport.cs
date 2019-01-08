@@ -14,6 +14,7 @@ public class T_Teleport : MonoBehaviour {
     public bool teleported = false;
     [Space]
     [SerializeField] GameObject[] toRespawn;
+    [SerializeField] GameObject door;
     // Use this for initialization
     void Start () {
         
@@ -30,6 +31,8 @@ public class T_Teleport : MonoBehaviour {
                     toRespawn[i].SetActive(true);
                 }
             }
+
+            door.SetActive(false);
         }
 	}
 

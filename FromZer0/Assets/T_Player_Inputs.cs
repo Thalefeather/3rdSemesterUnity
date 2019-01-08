@@ -25,6 +25,7 @@ public class T_Player_Inputs : MonoBehaviour {
     public bool paused = false;
     public bool touchingNpc = false;
     public bool touchingTeleporter = false;
+    public bool touchingCollector = false;
     public bool inCombo = false;
 
     [Space]
@@ -78,7 +79,7 @@ public class T_Player_Inputs : MonoBehaviour {
             //melee Attack and talk to npcs
             if (AisPressed)
             {
-                if (!touchingNpc && !touchingTeleporter)
+                if (!touchingNpc && !touchingTeleporter && !touchingCollector)
                 {
                     pcMelee.attack();
                 }
@@ -89,6 +90,10 @@ public class T_Player_Inputs : MonoBehaviour {
                 else if (!dialogueOptions && touchingTeleporter)
                 {
                     uiMenu.TeleportPause();
+                }
+                else if (!dialogueOptions && touchingCollector)
+                {
+                    uiMenu.CollectorPause();
                 }
 
                 AisPressed = false;
@@ -215,7 +220,7 @@ public class T_Player_Inputs : MonoBehaviour {
             //melee Attack and talk to npcs
             if (Input.GetButtonDown("Fire1"))
             {
-                if(!touchingNpc && !touchingTeleporter)
+                if(!touchingNpc && !touchingTeleporter && !touchingCollector)
                 {
                     pcMelee.attack();
                 }
@@ -226,6 +231,10 @@ public class T_Player_Inputs : MonoBehaviour {
                 else if (!dialogueOptions && touchingTeleporter)
                 {
                     uiMenu.TeleportPause();
+                }
+                else if (!dialogueOptions && touchingCollector)
+                {
+                    uiMenu.CollectorPause();
                 }
             }
 

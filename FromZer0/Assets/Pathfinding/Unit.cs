@@ -27,6 +27,17 @@ public class Unit : MonoBehaviour
         StartCoroutine("RefreshPath");
     }
 
+    private void OnEnable()
+    {
+        rb = this.GetComponent<Rigidbody2D>();
+        StartCoroutine("RefreshPath");
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine("RefreshPath");
+    }
+
     IEnumerator RefreshPath()
     {
         Vector2 targetPositionOld = target.position.xy() + Vector2.up;

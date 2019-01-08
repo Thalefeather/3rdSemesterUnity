@@ -50,6 +50,8 @@ public class T_Health : MonoBehaviour {
                 this.gameObject.GetComponent<T_LootTable>().spawnBestDrop();
                 //Destroy(this.gameObject);
                 this.gameObject.SetActive(false);
+
+                
             }
             else if(this.gameObject.tag == "Player" && !dead)//if its the player and he aint dead yet
             {

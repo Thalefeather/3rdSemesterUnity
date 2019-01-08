@@ -26,9 +26,10 @@ public class T_BossAttacks : MonoBehaviour {
        //AttackPattern1(false);
        //setUseMeteor();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    // Update is called once per frame
+    void Update () {
         if(AP1)
         {
             AttackPattern1(false);

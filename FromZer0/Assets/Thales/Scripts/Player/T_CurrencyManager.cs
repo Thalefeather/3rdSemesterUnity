@@ -9,16 +9,19 @@ public class T_CurrencyManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        currentAmount = PlayerPrefs.GetFloat("Scrap");
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        currentAmount = PlayerPrefs.GetFloat("Scrap");
+    }
 
     public void earnCurrency(float amount)
     {
-        currentAmount = currentAmount + amount;
+        //currentAmount = currentAmount + amount;
+
+        PlayerPrefs.SetFloat("Scrap", currentAmount + amount);
 
         GameObject ScrapUI = GameObject.Find("EarnedScrapRepresentationManager");
         ScrapUI.GetComponent<T_EarnedScrapCanvas>().setValue(amount);
@@ -28,9 +31,11 @@ public class T_CurrencyManager : MonoBehaviour {
     
     public void loseCurrency(float amount)
     {
-        currentAmount = currentAmount - amount;
+        //currentAmount = currentAmount - amount;
 
-        if(currentAmount <0)
+        PlayerPrefs.SetFloat("Scrap", currentAmount - amount);
+
+        if (currentAmount <0)
         {
             currentAmount = 0;
         }
@@ -38,6 +43,8 @@ public class T_CurrencyManager : MonoBehaviour {
 
     public bool checkIfEnough(float amount)
     {
+        currentAmount = PlayerPrefs.GetFloat("Scrap");
+
         if (currentAmount - amount >= 0)
         {
             return true;

@@ -11,6 +11,7 @@ public class T_PauseManager : MonoBehaviour {
     [SerializeField] GameObject tabMenu;
     [SerializeField] GameObject deadMenu;
     [SerializeField] GameObject teleportMenu;
+    [SerializeField] GameObject collectorMenu;
     [SerializeField] GameObject storeMenu;
     [Space]
     public SimpleHealthBar levelBar;
@@ -145,6 +146,22 @@ public class T_PauseManager : MonoBehaviour {
         TabUnpause();
 
         storeMenu.SetActive(false);
+    }
+
+    public void CollectorPause()
+    {
+        collectorMenu.SetActive(true);
+        Time.timeScale = 0;
+        isPaused = true;
+        paused = true;
+    }
+
+    public void CollectorUnpause()
+    {
+        collectorMenu.SetActive(false);
+        Time.timeScale = 1;
+        isPaused = false;
+        paused = false;
     }
 
 

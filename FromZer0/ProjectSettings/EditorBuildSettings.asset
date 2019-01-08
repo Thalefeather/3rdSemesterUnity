@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Thales/Scenes/Main Menu.unity
     guid: 1b58b75f2931efe408b7e8a5fb31788b
+  - enabled: 1
+    path: Assets/MainMenu/Register.unity
+    guid: c95510544173fd74bbfcbf1ab3e75cb6
+  - enabled: 1
+    path: Assets/MainMenu/Main_Menu.unity
+    guid: c60f6087727408f498caad9a7bbf9b76
   - enabled: 1
     path: Assets/Thales/Scenes/TestingGround.unity
     guid: 2cda990e2423bbf4892e6590ba056729

@@ -10,10 +10,15 @@ public class T_Truck : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "Player" && this.gameObject.transform.tag != "ScrapCollector")
         {
             exclamation.SetActive(true);
             PCInputs.touchingTeleporter = true;
+        }
+        else
+        {
+            exclamation.SetActive(true);
+            PCInputs.touchingCollector = true;
         }
     }
 
@@ -23,6 +28,7 @@ public class T_Truck : MonoBehaviour {
         {
             exclamation.SetActive(false);
             PCInputs.touchingTeleporter = false;
+            PCInputs.touchingCollector = false;
         }
     }
 }
