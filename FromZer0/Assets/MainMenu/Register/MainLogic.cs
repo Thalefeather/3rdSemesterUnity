@@ -17,7 +17,7 @@ public class MainLogic : MonoBehaviour
     [HideInInspector]
     public string GlobalPlayerName, GlobalPlayerID;
     [HideInInspector]
-    static  float GlobalPlayerScrap;
+    static  float GlobalPlayerScrap, GlobalPendingScrap;
 
     private string CheckID, CheckName;
     private float CheckScrap;
@@ -90,11 +90,14 @@ public class MainLogic : MonoBehaviour
 
                 var accountData = account["data"];
 
+                GlobalPendingScrap = accountData["pendingScrap"].AsFloat;
+
                 GlobalPlayerScrap = accountData["coins"].AsFloat;
 
                 PlayerPrefs.SetString("ID", GlobalPlayerID);
                 PlayerPrefs.SetString("Name", GlobalPlayerName);
                 PlayerPrefs.SetFloat("Scrap", GlobalPlayerScrap);
+                PlayerPrefs.SetFloat("PendingScrap", GlobalPendingScrap);
 
                 // Debug.Log("Player name:" + GlobalPlayerName);
                 // Debug.Log("Player ID:" + GlobalPlayerID);

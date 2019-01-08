@@ -63,17 +63,18 @@ public class GameApi : MonoBehaviour
         SendRequest(www, callback);
     }
 
-    public void SaveData(string id, string coins, ResultCallback callback)
+    public void SaveData(string id, string coins, string pendingScrap, ResultCallback callback)
     {
         var form = new WWWForm();
 
         form.AddField("_id", id);      
         form.AddField("coins", coins);
+        form.AddField("pendingScrap", pendingScrap);
 
         var www = new WWW(BASE_URL + "saveData", form);
 
         if (_selectedMethod == Method.GET)
-            www = new WWW(BASE_URL + "saveData?id=" + id +"&coins=" + coins);
+            www = new WWW(BASE_URL + "saveData?id=" + id +"&coins=" + coins + "&pendingScrap=" + pendingScrap);
 
         SendRequest(www, callback);
     }

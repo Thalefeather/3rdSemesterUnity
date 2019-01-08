@@ -11,6 +11,7 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
 
     [SerializeField] Text PlayerLevel;
     [SerializeField] Text ScrapAmount;
+    [SerializeField] Text PendingScrapText;
     [SerializeField] Text HP;
     [SerializeField] Text SP;
     [Space]
@@ -43,6 +44,8 @@ public class T_TabMenu_SkillTextManager : MonoBehaviour {
 
         var Scrap = Z.transform.GetChild(1).GetComponent<T_CurrencyManager>().currentAmount;
         ScrapAmount.text = Scrap.ToString();
+
+        PendingScrapText.text = PlayerPrefs.GetFloat("PendingScrap").ToString();
 
         var currentHP = Z.GetComponent<T_Health>().currentHealth;
         var totalHP = Z.GetComponent<T_Health>().maxHealth;

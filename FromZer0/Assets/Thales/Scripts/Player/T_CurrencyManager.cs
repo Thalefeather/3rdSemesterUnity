@@ -53,4 +53,12 @@ public class T_CurrencyManager : MonoBehaviour {
             return false;
     }
 
+    public void addPendingToPlayer()
+    {
+        currentAmount = PlayerPrefs.GetFloat("Scrap");
+
+        earnCurrency(PlayerPrefs.GetFloat("PendingScrap"));
+        PlayerPrefs.SetFloat("PendingScrap", 0);
+    }
+
 }

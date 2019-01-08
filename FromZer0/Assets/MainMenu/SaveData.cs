@@ -8,7 +8,7 @@ public class SaveData : MonoBehaviour {
     private GameApi _api;
 
     private string ID;
-    private float Scrap;
+    private float Scrap, PendingScrap;
 
 
     void Awake()
@@ -23,8 +23,10 @@ public class SaveData : MonoBehaviour {
     public void OnSaveDataButtonClick()
     {
         Scrap = PlayerPrefs.GetFloat("Scrap");
+        PendingScrap = PlayerPrefs.GetFloat("PendingScrap");
+
         ID = PlayerPrefs.GetString("ID");
-        _api.SaveData(ID, Scrap.ToString(), (bool error, string data) =>
+        _api.SaveData(ID, Scrap.ToString(), PendingScrap.ToString(), (bool error, string data) =>
         {
             if (error)
             {
